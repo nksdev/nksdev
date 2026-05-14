@@ -17,7 +17,7 @@
 
 <td width="35%">
 
-<img src="photo.jpg" width="100%" style="border-radius:12px;" />
+<img src="photo.png" width="100%" style="border-radius:12px;" />
 
 </td>
 
