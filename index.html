@@ -111,9 +111,9 @@ body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),rad
 .hero-mantra{font:10px var(--mono);letter-spacing:.09em;color:#aeb3cf;margin-top:24px}
 .hero-mantra i{color:var(--pink);font-style:normal;padding:0 4px}
 .hero-blended-art{position:relative;z-index:1;min-height:470px;align-self:stretch;overflow:hidden;margin:-5px -25px -8px -85px;mask-image:linear-gradient(90deg,transparent 0%,#000 13%,#000 88%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 13%,#000 88%,transparent 100%)}
-.hero-blended-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% center;opacity:.96;filter:saturate(.96);transform:scale(1.025);animation:art-gentle-float 13s ease-in-out infinite alternate}
-.art-fade-left{position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 35%,transparent) 15%,transparent 42%);pointer-events:none}
-.art-fade-bottom{position:absolute;inset:45% 0 0;background:linear-gradient(0deg,var(--bg),transparent 72%);pointer-events:none}
+.hero-blended-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:79% center;opacity:.88;filter:saturate(.88) contrast(1.04);transform:scale(1.08);animation:art-gentle-float 13s ease-in-out infinite alternate}
+.art-fade-left{position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,var(--bg) 24%,color-mix(in srgb,var(--bg) 94%,transparent) 38%,color-mix(in srgb,var(--bg) 72%,transparent) 48%,color-mix(in srgb,var(--bg) 24%,transparent) 62%,transparent 76%);pointer-events:none}
+.art-fade-bottom{position:absolute;inset:38% 0 0;background:linear-gradient(0deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 66%,transparent) 22%,transparent 66%);pointer-events:none}
 .art-note{position:absolute;z-index:2;font:italic 700 13px 'Permanent Marker',cursive;color:var(--pink);text-shadow:0 0 18px #ff45b844;letter-spacing:.02em}
 .art-note-top{top:8%;right:8%;transform:rotate(-7deg)}
 .art-note-bottom{bottom:12%;right:6%;color:var(--cyan);transform:rotate(4deg)}
@@ -128,7 +128,7 @@ body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),rad
 .principle>b{margin-left:auto;color:#9b8cff;font-size:17px}
 @keyframes art-gentle-float{from{transform:scale(1.025) translateY(0)}to{transform:scale(1.06) translateY(-5px)}}
 @media(max-width:980px){.hero-blended{grid-template-columns:minmax(320px,.9fr) minmax(0,1fr);min-height:470px}.hero-blended-copy{padding-left:4px}.hero-blended-art{margin-left:-75px;min-height:420px}.principles{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:680px){.hero-blended{display:flex;flex-direction:column;padding-top:18px;min-height:0}.hero-blended-copy{padding:15px 4px 0;max-width:none}.hero-greeting{margin-top:18px}.hero-name{font-size:clamp(64px,18vw,92px)}.hero-fullname{font-size:25px}.hero-summary{font-size:13px}.hero-blended-art{width:calc(100% + 28px);margin:0 -14px -8px;min-height:280px;height:62vw;max-height:390px;mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 86%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 86%,transparent 100%)}.hero-blended-art img{object-position:74% center}.art-note{font-size:10px}.hero-mantra{font-size:8px}.principles{gap:8px}.principle{padding:11px 9px;gap:8px}.principle-icon{width:34px;height:34px;font-size:17px}.principle small{font-size:9px}}
+@media(max-width:680px){.hero-blended{display:flex;flex-direction:column;padding-top:18px;min-height:0}.hero-blended-copy{padding:15px 4px 0;max-width:none}.hero-greeting{margin-top:18px}.hero-name{font-size:clamp(64px,18vw,92px)}.hero-fullname{font-size:25px}.hero-summary{font-size:13px}.hero-blended-art{width:calc(100% + 28px);margin:0 -14px -8px;min-height:280px;height:62vw;max-height:390px;mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 86%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 86%,transparent 100%)}.hero-blended-art img{object-position:80% center;transform:scale(1.04)}.art-note{font-size:10px}.hero-mantra{font-size:8px}.principles{gap:8px}.principle{padding:11px 9px;gap:8px}.principle-icon{width:34px;height:34px;font-size:17px}.principle small{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.hero-blended-art img{animation:none;transition:none}}
 
 </style>
@@ -159,8 +159,6 @@ body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),rad
   <div class="hero-blended-art" role="img" aria-label="Illustrated neon cybersecurity workstation featuring Naman, coding monitors, books, laptop and a cat">
     <img src="hero-anime.png" alt="" fetchpriority="high">
     <div class="art-fade-left"></div><div class="art-fade-bottom"></div>
-    <span class="art-note art-note-top">IDEAS INTO IMPACT ↘</span>
-    <span class="art-note art-note-bottom">GOOD CODE. SAFER SYSTEMS.</span>
   </div>
 </section>
 <section class="principles wrap" aria-label="Working principles">
