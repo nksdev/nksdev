@@ -76,11 +76,11 @@ A browser-based menstrual health tracker with local data persistence and an AI c
 <tr>
 <td width="50%" valign="top">
 
-### SecureShare
+### SecureShare — Browser Security Awareness Demo
 
-A security-oriented file-sharing project. Review the source and documentation to assess its design and safeguards.
+A cyber-awareness proof of concept illustrating the risks of deceptive browser permission prompts and invasive client-side data collection. The repository contains high-risk behavior and is **not a secure file-sharing service**. Inspect the source only in an isolated, authorized lab; do not deploy it or use it on unsuspecting users.
 
-[View repository ↗](https://github.com/nksdev/secureshare)
+[Inspect source ↗](https://github.com/nksdev/secureshare)
 
 </td>
 <td width="50%" valign="top">
