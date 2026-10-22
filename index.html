@@ -40,6 +40,42 @@
 @keyframes spark-float{0%,100%{translate:0 0}50%{translate:0 -5px}}
 @media(prefers-reduced-motion:reduce){.orbit,.orbit:before,.orbit:after,.avatar-card,.character-glow,.character-art,.character-stage:after,.floating-note,.spark{animation:none!important;transition:none!important}}
 
+
+/* Portfolio art direction inspired by the supplied illustrated reference */
+:root{--bg:#070812;--panel:#0d1225;--panel2:#11172c;--line:#2b3150;--cyan:#36d9f6;--pink:#ff45b6;--purple:#a64dff;--lime:#d5f76a;--gold:#ffd166}
+body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),radial-gradient(ellipse at 8% 42%,#0b4b7130,transparent 28%),var(--bg)}
+.topbar{background:#080914d9;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff12}
+.brand{font-weight:900;letter-spacing:-.07em}.brand span{color:var(--pink);font-size:1.4em}
+.hero{min-height:640px;padding-top:28px;padding-bottom:38px;align-items:center}
+.hero-copy{position:relative;z-index:4}
+.eyebrow{letter-spacing:.2em;color:var(--cyan);font-weight:800}
+.hello{font-size:clamp(32px,4vw,53px);font-weight:500;letter-spacing:-.06em;margin:30px 0 0;color:#f7f7ff}
+.hero h1{font-size:clamp(66px,8vw,116px);line-height:.92;letter-spacing:-.085em;text-shadow:0 8px 38px #0007}
+.hero h1 .accent{color:var(--pink);text-shadow:0 0 22px #ff45b644}
+.role{font-size:clamp(19px,2vw,27px);line-height:1.5;margin-top:23px}
+.role em{font-style:normal;color:var(--cyan)}
+.hero-desc{max-width:580px;font-size:15px;line-height:1.85;color:#b8bbd4}
+.hero-art{min-height:500px}
+.avatar-card{width:min(100%,500px);padding:15px 16px 11px;border-radius:28px;background:linear-gradient(140deg,#ffffff13,#111326c9 54%,#090b17);border:1px solid #ffffff2a;box-shadow:0 30px 100px #0008,0 0 45px #8c42ff16;transform:rotate(1deg)}
+.avatar{height:370px;border-radius:19px}
+.character-art{width:100%;height:100%;object-fit:cover;transform-origin:50% 70%}
+.character-caption{border-radius:12px;padding:11px 13px}
+.orbit{width:min(94%,490px);aspect-ratio:1}
+.floating-note{border-radius:16px;box-shadow:0 15px 45px #0006}
+.note-a strong,.note-b strong{color:var(--cyan)}
+.spark{font-family:'Permanent Marker',cursive;font-size:clamp(14px,1.7vw,22px);color:var(--pink)}
+.hero-tags{margin-top:28px}
+.section{padding-top:27px;padding-bottom:27px}
+.panel{background:linear-gradient(145deg,#10162aee,#0a0e1dec);border:1px solid #ffffff17;border-radius:18px;box-shadow:0 16px 40px #0002}
+.section-title{text-transform:uppercase;letter-spacing:-.035em}
+.section-title .ico{box-shadow:0 0 25px #43d9f41b}
+.project-card{background:linear-gradient(145deg,#111a31,#090e1d);border-radius:13px;box-shadow:0 12px 24px #0002}
+.project-card:hover{box-shadow:0 14px 35px #a64dff18}
+.project-symbol{background:linear-gradient(145deg,#43d9f41a,#a64dff18);border-radius:12px}
+.contact-card{border-radius:23px;background:radial-gradient(ellipse at 90% 20%,#8b31db35,transparent 38%),linear-gradient(110deg,#13172c,#0c0e1a);box-shadow:0 20px 60px #0003}
+@media(max-width:980px){.hero{min-height:580px}.hero-art{min-height:420px}.avatar{height:310px}}
+@media(max-width:720px){.hero{padding-top:8px}.hello{margin-top:20px}.hero-art{min-height:340px}.avatar{height:230px}.avatar-card{transform:none}.hero-desc{font-size:13px}}
+
 </style>
 </head>
 <body>
