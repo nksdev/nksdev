@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Naman Kumar Sonker — cybersecurity student exploring systems architecture, application security, privacy-first engineering, and digital forensics.">
+  <title>Naman Kumar Sonker — Cybersecurity & Systems</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080b12;--panel:#101621;--panel2:#0c111a;--text:#edf2fa;--muted:#9ba8ba;--line:#263143;--cyan:#67e8f9;--blue:#7aa7ff;--green:#9fe7c0;--radius:22px;--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    body{margin:0;background:radial-gradient(ellipse at 82% 0%,rgba(44,92,151,.18),transparent 35%),radial-gradient(ellipse at 0% 35%,rgba(24,145,153,.09),transparent 28%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .nav{position:sticky;top:0;z-index:5;background:rgba(8,11,18,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(155,168,186,.13)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:750;letter-spacing:-.03em}
+    .mark{width:34px;height:34px;display:grid;place-items:center;border:1px solid #3d566b;border-radius:11px;color:var(--cyan);font:700 13px ui-monospace,monospace;background:linear-gradient(145deg,#142332,#0b111b)}
+    .navlinks{display:flex;align-items:center;gap:25px;color:var(--muted);font-size:13px}
+    .navlinks a:hover{color:var(--text)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--line);border-radius:999px;padding:11px 17px;font-size:13px;font-weight:650;transition:transform .2s,border-color .2s,background .2s}
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px);border-color:#56738e}
+    .btn-primary{background:var(--text);color:#0a0d13;border-color:var(--text)}
+    .btn-primary:hover{background:var(--cyan);border-color:var(--cyan)}
+    .hero{padding:104px 0 86px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:58px;min-height:620px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font:600 11px ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.15em}
+    .pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 16px rgba(159,231,192,.7)}
+    h1{font-size:clamp(44px,7vw,78px);line-height:1.02;letter-spacing:-.065em;margin:22px 0 24px;font-weight:760;max-width:760px}
+    h1 .accent{background:linear-gradient(105deg,var(--cyan),#a8c7ff 72%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:clamp(16px,2vw,19px);color:#b1bdcd;max-width:650px;line-height:1.8}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .quickfacts{display:flex;flex-wrap:wrap;gap:20px;margin-top:34px;color:var(--muted);font-size:12px}
+    .quickfacts span{display:flex;align-items:center;gap:8px}
+    .quickfacts b{color:#e4ebf5;font-weight:600}
+    .terminal{position:relative;padding:20px;border:1px solid #2a3b50;border-radius:24px;background:linear-gradient(145deg,rgba(18,27,41,.96),rgba(9,14,23,.96));box-shadow:0 30px 100px rgba(0,0,0,.25);overflow:hidden}
+    .terminal:before{content:"";position:absolute;width:220px;height:220px;right:-90px;top:-110px;background:rgba(103,232,249,.09);filter:blur(40px);border-radius:50%}
+    .term-top{display:flex;gap:7px;padding-bottom:17px;border-bottom:1px solid var(--line);align-items:center}
+    .dot{width:8px;height:8px;border-radius:50%;background:#435066}
+    .term-label{margin-left:auto;color:#7d8da3;font:11px ui-monospace,monospace}
+    .term-code{font:12px/2 ui-monospace,SFMono-Regular,Menlo,monospace;color:#b5c5d8;padding:14px 0 4px;overflow-wrap:anywhere}
+    .term-code .dim{color:#65758b}.term-code .key{color:var(--cyan)}.term-code .val{color:var(--green)}.term-code .purple{color:#c5b5ff}
+    .term-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:15px;color:#7d8da3;font:10px ui-monospace,monospace}
+    .section{padding:78px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
+    .kicker{color:var(--cyan);font:600 11px ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase}
+    h2{font-size:clamp(30px,4vw,45px);line-height:1.12;letter-spacing:-.045em;margin:10px 0 0}
+    .section-intro{max-width:440px;color:var(--muted);font-size:14px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+    .card{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:25px;background:linear-gradient(145deg,rgba(17,24,36,.94),rgba(11,16,25,.96));transition:transform .22s,border-color .22s}
+    .card:hover{transform:translateY(-4px);border-color:#49627b}
+    .card-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:24px}
+    .iconbox{height:42px;width:42px;display:grid;place-items:center;border:1px solid #304256;border-radius:13px;color:var(--cyan);background:#101e2a;font:17px ui-monospace,monospace}
+    .small-label{color:#8291a6;font:10px ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
+    h3{font-size:19px;letter-spacing:-.025em;margin:0 0 9px}
+    .card p{color:var(--muted);font-size:13px;margin:0;line-height:1.8}
+    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:19px}
+    .tag{font:10px ui-monospace,monospace;color:#b5c5d8;border:1px solid #2b3748;border-radius:7px;padding:5px 8px;background:rgba(255,255,255,.02)}
+    .card-link{display:inline-flex;margin-top:22px;gap:8px;align-items:center;font-size:12px;color:var(--cyan);font-weight:650}
+    .focus-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .focus{border:1px solid var(--line);border-radius:18px;padding:22px;background:rgba(15,21,32,.66)}
+    .focus-num{font:12px ui-monospace,monospace;color:var(--cyan)}
+    .focus h3{font-size:16px;margin:15px 0 7px}
+    .focus p{font-size:12px;color:var(--muted);margin:0}
+    .about{display:grid;grid-template-columns:.7fr 1.3fr;gap:55px;align-items:start}
+    .about-aside{padding:25px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(150deg,#111c2a,#0b1018)}
+    .about-aside .big{font-size:35px;font-weight:750;letter-spacing:-.06em;color:var(--cyan)}
+    .about-aside p{font-size:12px;color:var(--muted);margin:3px 0 0}
+    .about-copy p{color:#b0bdce;font-size:14px;margin:0 0 16px}
+    .about-copy strong{color:var(--text);font-weight:650}
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}
+    .skill{padding:8px 11px;border:1px solid #2a3749;border-radius:9px;color:#bdc9d8;font-size:11px;background:rgba(255,255,255,.02)}
+    .contact{position:relative;overflow:hidden;border:1px solid #30445a;border-radius:26px;padding:clamp(28px,5vw,55px);background:radial-gradient(ellipse at 100% 0%,rgba(103,232,249,.11),transparent 42%),linear-gradient(135deg,#111a28,#0b1018)}
+    .contact h2{max-width:650px}
+    .contact p{color:var(--muted);max-width:580px;font-size:14px}
+    .contact-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+    footer{padding:28px 0 35px;color:#718096;font-size:11px}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;border-top:1px solid rgba(155,168,186,.13);padding-top:22px}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;gap:36px;padding:78px 0 65px;min-height:auto}.terminal{max-width:560px}.section-head{display:block}.section-intro{margin-top:15px}.about{grid-template-columns:1fr;gap:24px}.focus-grid{grid-template-columns:1fr}.navlinks{gap:14px}.navlinks a:not(.nav-cta){display:none}}
+    @media(max-width:560px){.wrap{width:min(calc(100% - 28px),var(--max))}.nav-inner{height:64px}.nav-cta{padding:9px 12px}.hero{padding-top:64px}h1{font-size:47px}.grid{grid-template-columns:1fr}.card{padding:21px}.section{padding:57px 0}.quickfacts{gap:12px}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home" aria-label="Naman Kumar Sonker home"><span class="mark">NM</span><span>namanmic<span style="color:var(--cyan)">.</span></span></a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#work">Selected work</a><a href="#focus">Focus</a><a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Get in touch ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span> Cybersecurity · Systems · Engineering</div>
+        <h1>Understanding<br>what happens <span class="accent">under the hood.</span></h1>
+        <p class="lead">I’m Naman — a cybersecurity and digital forensics student interested in how modern applications authenticate users, move data, protect privacy, and fail.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
+          <a class="btn" href="https://github.com/nksdev" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+        </div>
+        <div class="quickfacts">
+          <span><b>01</b> Security-minded engineering</span>
+          <span><b>02</b> Systems thinking</span>
+          <span><b>03</b> Privacy-first design</span>
+        </div>
+      </div>
+      <aside class="terminal" aria-label="Technical interests preview">
+        <div class="term-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="term-label">namanmic / focus.json</span></div>
+        <div class="term-code">
+          <span class="dim">{</span><br>
+          &nbsp;&nbsp;<span class="key">"identity"</span>: <span class="val">"security + systems"</span>,<br>
+          &nbsp;&nbsp;<span class="key">"interests"</span>: <span class="dim">[</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"application security"</span>,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"architecture analysis"</span>,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"digital forensics"</span>,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"privacy-first AI"</span><br>
+          &nbsp;&nbsp;<span class="dim">]</span>,<br>
+          &nbsp;&nbsp;<span class="key">"approach"</span>: <span class="purple">"inspect → test → explain"</span><br>
+          <span class="dim">}</span>
+        </div>
+        <div class="term-bottom"><span>PROFILE: ENGINEERING-LED</span><span>STATUS: LEARNING / BUILDING</span></div>
+      </aside>
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">01 / Selected work</div><h2>Projects worth exploring.</h2></div>
+          <p class="section-intro">A selection of repositories from my GitHub. Project descriptions are intentionally high-level; open each repository for its implementation, current status, and documentation.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="card-top"><span class="iconbox">01</span><span class="small-label">AI · Knowledge systems</span></div>
+            <h3>The Brain AI</h3>
+            <p>A project exploring AI-assisted knowledge synthesis and multi-document interaction. See the repository for the implementation and supported capabilities.</p>
+            <div class="tags"><span class="tag">AI systems</span><span class="tag">Knowledge retrieval</span><span class="tag">Python</span></div>
+            <a class="card-link" href="https://github.com/nksdev/THE-BRAIN-AI" target="_blank" rel="noreferrer">Inspect repository ↗</a>
+          </article>
+          <article class="card">
+            <div class="card-top"><span class="iconbox">02</span><span class="small-label">Privacy · Web app</span></div>
+            <h3>Privacy-First Cycle Tracker</h3>
+            <p>A browser-based menstrual health tracker focused on local data persistence, cycle insights, and an integrated AI chat experience.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Privacy</span></div>
+            <a class="card-link" href="https://github.com/nksdev/privacy-first-cycle-tracker" target="_blank" rel="noreferrer">Inspect repository ↗</a>
+          </article>
+          <article class="card">
+            <div class="card-top"><span class="iconbox">03</span><span class="small-label">Security · File sharing</span></div>
+            <h3>SecureShare</h3>
+            <p>A security-oriented file-sharing project. Explore the code and documentation to evaluate its transfer model, safeguards, and current limitations.</p>
+            <div class="tags"><span class="tag">Security engineering</span><span class="tag">Application design</span></div>
+            <a class="card-link" href="https://github.com/nksdev/secureshare" target="_blank" rel="noreferrer">Inspect repository ↗</a>
+          </article>
+          <article class="card">
+            <div class="card-top"><span class="iconbox">04</span><span class="small-label">Web · Publishing</span></div>
+            <h3>Systems Blog Platform</h3>
+            <p>A web platform repository connected to my interest in explaining the architecture and behavior of modern software systems.</p>
+            <div class="tags"><span class="tag">Web engineering</span><span class="tag">Systems thinking</span></div>
+            <a class="card-link" href="https://github.com/nksdev/systems-blog-platform" target="_blank" rel="noreferrer">Inspect repository ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">02 / Technical focus</div><h2>Curiosity with a method.</h2></div>
+          <p class="section-intro">The areas I’m developing through coursework, independent projects, and hands-on experimentation.</p>
+        </div>
+        <div class="focus-grid">
+          <article class="focus"><div class="focus-num">FOCUS_01</div><h3>Application security</h3><p>Authentication and session flows, authorization boundaries, web security testing, and secure-by-design patterns.</p></article>
+          <article class="focus"><div class="focus-num">FOCUS_02</div><h3>Systems & networks</h3><p>Understanding components, protocols, data flows, trust boundaries, and how services interact.</p></article>
+          <article class="focus"><div class="focus-num">FOCUS_03</div><h3>Digital forensics</h3><p>Evidence integrity, structured investigation, artifact analysis, and repeatable technical documentation.</p></article>
+          <article class="focus"><div class="focus-num">FOCUS_04</div><h3>Privacy-first engineering</h3><p>Minimizing data collection, understanding local storage risks, and making privacy trade-offs explicit.</p></article>
+          <article class="focus"><div class="focus-num">FOCUS_05</div><h3>AI systems</h3><p>Exploring knowledge workflows, model integrations, and the security boundaries around AI applications.</p></article>
+          <article class="focus"><div class="focus-num">FOCUS_06</div><h3>Technical communication</h3><p>Turning complex implementation details into architecture diagrams, practical write-ups, and clear explanations.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap about">
+        <aside class="about-aside">
+          <div class="kicker">About me</div>
+          <div class="big">Learn.<br>Inspect.<br>Build.</div>
+          <p class="mono">A practical approach to understanding technology.</p>
+        </aside>
+        <div class="about-copy">
+          <div class="kicker">03 / Background</div>
+          <h2>Engineering beyond the surface.</h2>
+          <p>I’m pursuing a <strong>B.Tech in Computer Science and Engineering with a specialization in Cybersecurity and Digital Forensics</strong>. I’m building a foundation in application security, systems analysis, and software development.</p>
+          <p>I’m most interested in work that combines investigation with implementation: tracing a request through a system, identifying where trust is assumed, testing those assumptions, and documenting what the evidence shows.</p>
+          <p>This portfolio is a living record of that process. I aim to show not only what I build, but also how I reason about design decisions, limitations, and security trade-offs.</p>
+          <div class="skill-list"><span class="skill">Python</span><span class="skill">Linux</span><span class="skill">Git & GitHub</span><span class="skill">Web security</span><span class="skill">Networking</span><span class="skill">Digital forensics</span><span class="skill">System design</span><span class="skill">AI integrations</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div class="kicker">04 / Contact</div>
+          <h2>Have a system worth understanding?</h2>
+          <p>I’m interested in thoughtful engineering, security research, and opportunities to learn by solving real technical problems. Explore my work or connect with me.</p>
+          <div class="contact-links">
+            <a class="btn btn-primary" href="https://github.com/nksdev" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="btn" href="https://linkedin.com/in/namanmic" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="btn" href="https://x.com/namanmic" target="_blank" rel="noreferrer">X / Twitter ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-inner"><span>© <span id="year"></span> Naman Kumar Sonker · namanmic</span><span class="mono">Designed for clarity, built for the details.</span></div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
