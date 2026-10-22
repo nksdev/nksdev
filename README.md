@@ -67,15 +67,6 @@ AI-assisted knowledge synthesis and multi-document interaction.
 </td>
 <td width="50%" valign="top">
 
-### ApplyFlow — Job Application Tracker
-
-A local-first tracker with application statuses, follow-up reminders, searchable records, and JSON/CSV export. Data stays in browser storage.
-
-[Open on GitHub Pages ↗](https://nksdev.github.io/nksdev/applyflow/) · [Source ↗](https://github.com/nksdev/nksdev/tree/main/applyflow)
-
-</td>
-<td width="50%" valign="top">
-
 ### Privacy-First Cycle Tracker
 
 A browser-based menstrual health tracker with local data persistence and an AI chat feature.
