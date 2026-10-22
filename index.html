@@ -311,7 +311,7 @@ const skillItems=document.querySelectorAll("#skillIcons .skill");
 skillTabs.forEach(tab=>tab.addEventListener("click",()=>{
  const category=tab.dataset.skillFilter;
  skillTabs.forEach(item=>{const active=item===tab;item.classList.toggle("active",active);item.setAttribute("aria-pressed",String(active));});
- skillItems.forEach(item=>{item.hidden=!item.dataset.categories.split(/\\s+/).includes(category);});
+ skillItems.forEach(item=>{item.hidden=!item.dataset.categories.split(/\s+/).includes(category);});
 }));
 const symbols={"Python":"⌘","JavaScript":"JS","TypeScript":"TS","HTML":"◇","CSS":"▧","Dart":"◈","Java":"☕","Jupyter Notebook":"▦","Shell":"$_","C":"C","C++":"C++","Kotlin":"K","Swift":"S","Rust":"R"};
 const featuredOrder=["THE-BRAIN-AI","privacy-first-cycle-tracker","secureshare","systems-blog-platform","BetaKinetics","smart-budget-system","gguf-ai_model_ai-server-","github-manager"];
