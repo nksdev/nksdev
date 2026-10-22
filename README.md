@@ -95,6 +95,15 @@ A web platform project aligned with my interest in explaining how software syste
 </tr>
 </table>
 
+## Certification
+
+**Certified SOC Analyst (C|SA)** — EC-Council  
+- Issued: 03 October 2026
+- Renewable on: 01 November 2027
+- Credential: SOC workflows, security-event monitoring and analysis, SIEM-driven threat detection, AI-enhanced analysis, incident triage, and response support.
+
+This is the certification currently listed on my portfolio.
+
 ## Technical areas
 
 <p>
