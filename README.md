@@ -6,6 +6,8 @@
 <p align="center">
   <a href="https://nksdev.github.io/nksdev/"><strong>OPEN INTERACTIVE PORTFOLIO ↗</strong></a>
   &nbsp; · &nbsp;
+  <a href="assets/Naman_Kumar_Sonker_resume.pdf"><strong>DOWNLOAD RESUME (PDF)</strong></a>
+  &nbsp; · &nbsp;
   <a href="https://github.com/nksdev?tab=repositories">ALL PROJECTS</a>
   &nbsp; · &nbsp;
   <a href="https://linkedin.com/in/namanmic">LINKEDIN</a>
@@ -23,7 +25,7 @@
 
 ## About
 
-I’m a B.Tech student specializing in **Computer Science & Engineering — Cybersecurity and Digital Forensics**.
+I’m a B.Tech student at **Sharda University (2024–2027)** specializing in **Computer Science & Engineering — Cybersecurity and Digital Forensics**. My focus areas include VAPT, web application security, security automation, privileged access management (PIM), and privacy-first AI. I completed a cybersecurity internship at **Punjab National Bank**, with exposure to ARCON PIM, RBAC, least privilege, and enterprise access-control workflows.
 
 I’m interested in how modern systems authenticate users, exchange data, protect privacy, and fail. I learn by studying implementation details, testing assumptions in authorized environments, and documenting what the evidence actually shows.
 
