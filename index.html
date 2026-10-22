@@ -76,6 +76,20 @@ body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),rad
 @media(max-width:980px){.hero{min-height:580px}.hero-art{min-height:420px}.avatar{height:310px}}
 @media(max-width:720px){.hero{padding-top:8px}.hello{margin-top:20px}.hero-art{min-height:340px}.avatar{height:230px}.avatar-card{transform:none}.hero-desc{font-size:13px}}
 
+
+/* Full generated hero artwork: the supplied image already contains the portfolio title and illustration. */
+.hero-image-section{padding-top:22px;padding-bottom:28px;position:relative;z-index:1}
+.hero-image-frame{position:relative;overflow:hidden;border:1px solid #ffffff22;border-radius:22px;background:#080a17;box-shadow:0 28px 90px #0007,0 0 55px #a64dff12;isolation:isolate}
+.hero-banner-image{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center;transition:transform .65s ease,filter .65s ease}
+.hero-image-frame:hover .hero-banner-image{transform:scale(1.012);filter:saturate(1.06)}
+.hero-image-overlay{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#07081212,transparent 50%,#07081212),linear-gradient(0deg,#07081228,transparent 24%)}
+.hero-image-cta{position:absolute;right:22px;bottom:22px;z-index:2;display:inline-flex;gap:12px;align-items:center;padding:13px 18px;border-radius:999px;background:linear-gradient(100deg,#ff3eac,#b02dff);color:#fff;font-size:12px;font-weight:800;box-shadow:0 10px 30px #df32b64a;transition:transform .2s}
+.hero-image-cta:hover{transform:translateY(-3px)}
+.hero-image-caption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:13px 4px 0;color:#a5a8c3;font:10px var(--mono);letter-spacing:.13em}
+.hero-image-caption span:first-child{color:var(--cyan)}
+@media(max-width:720px){.hero-image-section{width:calc(100% - 22px);padding-top:12px}.hero-image-frame{border-radius:13px}.hero-banner-image{aspect-ratio:3/2;object-fit:cover}.hero-image-cta{right:10px;bottom:10px;padding:9px 12px;font-size:10px}.hero-image-caption{font-size:8px;letter-spacing:.06em;flex-direction:column;gap:5px}}
+@media(prefers-reduced-motion:reduce){.hero-banner-image,.hero-image-cta{transition:none}}
+
 </style>
 </head>
 <body>
@@ -90,71 +104,13 @@ body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),rad
   </nav>
 </header>
 <main>
-<section class="hero wrap" id="home">
-  <div class="glow" style="width:300px;height:300px;background:#7c3aed;right:0;top:20%"></div>
-  <div class="hero-copy">
-    <div class="eyebrow"><span class="dot"></span> CYBERSECURITY · SYSTEMS · SOFTWARE</div>
-    <p class="hello">Hey, I'm</p>
-    <h1>NAMAN<span class="accent">.</span><span style="display:block;font-size:clamp(23px,3.1vw,39px);letter-spacing:-.045em;color:#d7d8ed;margin-top:13px">KUMAR SONKER</span></h1>
-    <div class="role">Cybersecurity Student<br><em>Systems Thinker & Builder</em></div>
-    <p class="hero-desc">I explore how systems work, where they break, and how to make them safer. Interested in application security, digital forensics, privacy-first AI, and practical automation.</p>
-    <div class="hero-actions">
-      <a class="btn primary" href="#projects">▶ Explore My Work</a>
-      <a class="btn ghost" href="https://github.com/nksdev" target="_blank" rel="noopener">↗ GitHub Profile</a>
-    </div>
-    <div class="hero-tags"><span>INSPECT</span><span>ANALYZE</span><span>BUILD</span><span>LEARN</span><span>REPEAT</span></div>
+<section class="hero-image-section wrap" id="home" aria-label="Naman Kumar Sonker portfolio hero">
+  <div class="hero-image-frame">
+    <img class="hero-banner-image" src="hero-anime.png" alt="Anime-inspired portrait of Naman Kumar Sonker in a neon-lit cybersecurity workspace, with cybersecurity themes, code monitors, books, laptop, and cat" fetchpriority="high">
+    <div class="hero-image-overlay" aria-hidden="true"></div>
+    <a class="hero-image-cta" href="#projects">Explore My Work <span>↘</span></a>
   </div>
-  <div class="hero-art" aria-label="Decorative cybersecurity profile artwork">
-    <div class="orbit"></div>
-    <span class="spark a">Ideas into impact ↘</span><span class="spark b">Build. Break. Learn.</span>
-    <div class="floating-note note-a"><strong>01 / SECURITY</strong>Think in threat models</div>
-    <div class="floating-note note-b"><strong>02 / SYSTEMS</strong>Trace the full flow</div>
-    <div class="floating-note note-c">PRIVACY BY DESIGN</div>
-    <div class="avatar-card">
-      <div class="avatar-top"><span>NAMAN KUMAR SONKER / PROFILE</span><span>● AVAILABLE TO LEARN</span></div>
-      <div class="avatar character-stage">
-        <div class="character-glow"></div>
-        <svg class="character-art" viewBox="0 0 520 390" role="img" aria-label="Stylized anime-inspired cybersecurity engineer at a laptop" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="hood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#242746"/><stop offset=".55" stop-color="#101426"/><stop offset="1" stop-color="#080b18"/></linearGradient>
-            <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd8c3"/><stop offset="1" stop-color="#c9878e"/></linearGradient>
-            <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1d142b"/><stop offset=".55" stop-color="#090a17"/><stop offset="1" stop-color="#45204f"/></linearGradient>
-            <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#28274e"/><stop offset="1" stop-color="#12182c"/></linearGradient>
-            <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff4eb8"/><stop offset=".5" stop-color="#8c42ff"/><stop offset="1" stop-color="#43d9f4"/></linearGradient>
-            <filter id="soft"><feGaussianBlur stdDeviation="16"/></filter>
-          </defs>
-          <circle cx="266" cy="144" r="120" fill="url(#neon)" opacity=".25" filter="url(#soft)"/>
-          <path d="M73 390 Q78 273 154 244 L198 228 316 228 370 251 Q443 293 452 390Z" fill="url(#hood)" stroke="#444267" stroke-width="2"/>
-          <path d="M159 247 Q186 215 197 202 L319 203 Q335 225 366 246 L326 300 198 299Z" fill="#17182e"/>
-          <path d="M208 186 L207 233 Q260 272 312 231 L306 177Z" fill="url(#skin)"/>
-          <path d="M164 111 Q160 45 236 39 Q314 33 338 96 L329 165 Q309 211 259 220 Q211 211 187 173Z" fill="url(#skin)"/>
-          <path d="M158 130 Q130 75 173 38 Q202 5 252 20 Q300 4 332 45 Q364 70 342 143 L328 117 319 80 291 63 263 80 241 59 216 83 191 78 179 128 174 161Z" fill="url(#hair)" stroke="#30203f" stroke-width="3"/>
-          <path d="M173 90 Q196 44 229 52 Q243 56 252 72 Q275 38 305 60 Q329 78 326 111 L311 96 298 88 285 111 270 94 251 117 235 94 215 117 199 100 185 128Z" fill="#100d1c"/>
-          <path d="M185 139 Q204 123 225 137" fill="none" stroke="#4a2635" stroke-width="6" stroke-linecap="round"/>
-          <path d="M275 137 Q296 123 315 137" fill="none" stroke="#4a2635" stroke-width="6" stroke-linecap="round"/>
-          <path d="M195 150 Q208 161 224 151" fill="none" stroke="#191526" stroke-width="4" stroke-linecap="round"/>
-          <path d="M280 151 Q294 162 308 149" fill="none" stroke="#191526" stroke-width="4" stroke-linecap="round"/>
-          <ellipse cx="210" cy="151" rx="4" ry="6" fill="#43d9f4"/><ellipse cx="294" cy="151" rx="4" ry="6" fill="#43d9f4"/>
-          <path d="M250 151 L242 173 254 176" fill="none" stroke="#bd7e83" stroke-width="3" stroke-linecap="round"/>
-          <path d="M234 189 Q256 204 278 187" fill="none" stroke="#8d405d" stroke-width="4" stroke-linecap="round"/>
-          <path d="M175 120 Q149 146 178 178 M329 111 Q354 147 326 179" fill="none" stroke="#171126" stroke-width="13" stroke-linecap="round"/>
-          <path d="M192 225 L169 253 210 281 258 247 307 282 351 250 320 222 Q265 257 192 225Z" fill="#1b1b37" stroke="#4b3d68" stroke-width="2"/>
-          <path d="M193 242 L216 275 M322 239 L301 274" stroke="#43d9f4" stroke-width="2" opacity=".8"/>
-          <path d="M58 319 L443 319 475 377 26 377Z" fill="url(#screen)" stroke="#8c76c9" stroke-width="2"/>
-          <path d="M26 377 L475 377 456 389 45 389Z" fill="#7771a8"/>
-          <rect x="183" y="334" width="132" height="5" rx="2.5" fill="#4b4a72"/>
-          <text x="260" y="361" text-anchor="middle" fill="#d9d7ff" font-size="20" font-family="monospace" font-weight="700">N.</text>
-          <g transform="translate(375 297)" stroke="#ff4eb8" stroke-width="3" fill="none"><path d="M0 24 L0 6 12 0 24 6 24 24 12 30Z"/><path d="M8 13 L12 17 18 10"/></g>
-          <g transform="translate(78 285)" fill="#43d9f4" opacity=".95"><path d="M0 0 L10 0 10 10 20 10 20 20 10 20 10 30 0 30 0 20 -10 20 -10 10 0 10Z" transform="scale(.7)"/></g>
-          <g transform="translate(397 218)"><path d="M0 16 Q-9 3 0 -4 L9 5 17 -4 Q27 3 18 16 L9 27Z" fill="#171526" stroke="#b7a4ef" stroke-width="2"/><circle cx="6" cy="11" r="1.5" fill="#43d9f4"/><circle cx="13" cy="11" r="1.5" fill="#43d9f4"/></g>
-          <path d="M103 82 l8 13 15 2 -11 10 3 15 -15 -8 -13 8 3 -15 -12 -10 16 -2Z" fill="#ff4eb8" opacity=".9"/>
-          <path d="M399 75 l6 10 12 2 -9 8 2 12 -11 -6 -10 6 2 -12 -9 -8 12 -2Z" fill="#43d9f4" opacity=".85"/>
-        </svg>
-        <div class="character-caption"><strong>NAMAN KUMAR SONKER</strong><span>SECURITY · SYSTEMS · SOFTWARE</span></div>
-      </div>
-      <div class="avatar-top" style="padding:12px 4px 3px"><span>NO SHORTCUTS. JUST SYSTEMS.</span><span>v.2026</span></div>
-    </div>
-  </div>
+  <p class="hero-image-caption"><span>CYBERSECURITY · SYSTEMS · SOFTWARE</span><span>INSPECT · ANALYZE · BUILD · LEARN · REPEAT</span></p>
 </section>
 
 <section class="section wrap" id="about">
