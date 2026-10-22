@@ -1,225 +1,200 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080b12">
-  <meta name="description" content="Naman Kumar Sonker — cybersecurity student exploring systems architecture, application security, privacy-first engineering, and digital forensics.">
-  <title>Naman Kumar Sonker — Cybersecurity & Systems</title>
-  <style>
-    :root{color-scheme:dark;--bg:#080b12;--panel:#101621;--panel2:#0c111a;--text:#edf2fa;--muted:#9ba8ba;--line:#263143;--cyan:#67e8f9;--blue:#7aa7ff;--green:#9fe7c0;--radius:22px;--max:1120px}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:92px}
-    body{margin:0;background:radial-gradient(ellipse at 82% 0%,rgba(44,92,151,.18),transparent 35%),radial-gradient(ellipse at 0% 35%,rgba(24,145,153,.09),transparent 28%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit;text-decoration:none}
-    a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
-    .wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
-    .nav{position:sticky;top:0;z-index:5;background:rgba(8,11,18,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(155,168,186,.13)}
-    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:750;letter-spacing:-.03em}
-    .mark{width:34px;height:34px;display:grid;place-items:center;border:1px solid #3d566b;border-radius:11px;color:var(--cyan);font:700 13px ui-monospace,monospace;background:linear-gradient(145deg,#142332,#0b111b)}
-    .navlinks{display:flex;align-items:center;gap:25px;color:var(--muted);font-size:13px}
-    .navlinks a:hover{color:var(--text)}
-    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--line);border-radius:999px;padding:11px 17px;font-size:13px;font-weight:650;transition:transform .2s,border-color .2s,background .2s}
-    .nav-cta:hover,.btn:hover{transform:translateY(-2px);border-color:#56738e}
-    .btn-primary{background:var(--text);color:#0a0d13;border-color:var(--text)}
-    .btn-primary:hover{background:var(--cyan);border-color:var(--cyan)}
-    .hero{padding:104px 0 86px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:58px;min-height:620px}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font:600 11px ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.15em}
-    .pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 16px rgba(159,231,192,.7)}
-    h1{font-size:clamp(44px,7vw,78px);line-height:1.02;letter-spacing:-.065em;margin:22px 0 24px;font-weight:760;max-width:760px}
-    h1 .accent{background:linear-gradient(105deg,var(--cyan),#a8c7ff 72%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead{font-size:clamp(16px,2vw,19px);color:#b1bdcd;max-width:650px;line-height:1.8}
-    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-    .quickfacts{display:flex;flex-wrap:wrap;gap:20px;margin-top:34px;color:var(--muted);font-size:12px}
-    .quickfacts span{display:flex;align-items:center;gap:8px}
-    .quickfacts b{color:#e4ebf5;font-weight:600}
-    .terminal{position:relative;padding:20px;border:1px solid #2a3b50;border-radius:24px;background:linear-gradient(145deg,rgba(18,27,41,.96),rgba(9,14,23,.96));box-shadow:0 30px 100px rgba(0,0,0,.25);overflow:hidden}
-    .terminal:before{content:"";position:absolute;width:220px;height:220px;right:-90px;top:-110px;background:rgba(103,232,249,.09);filter:blur(40px);border-radius:50%}
-    .term-top{display:flex;gap:7px;padding-bottom:17px;border-bottom:1px solid var(--line);align-items:center}
-    .dot{width:8px;height:8px;border-radius:50%;background:#435066}
-    .term-label{margin-left:auto;color:#7d8da3;font:11px ui-monospace,monospace}
-    .term-code{font:12px/2 ui-monospace,SFMono-Regular,Menlo,monospace;color:#b5c5d8;padding:14px 0 4px;overflow-wrap:anywhere}
-    .term-code .dim{color:#65758b}.term-code .key{color:var(--cyan)}.term-code .val{color:var(--green)}.term-code .purple{color:#c5b5ff}
-    .term-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:15px;color:#7d8da3;font:10px ui-monospace,monospace}
-    .section{padding:78px 0}
-    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
-    .kicker{color:var(--cyan);font:600 11px ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase}
-    h2{font-size:clamp(30px,4vw,45px);line-height:1.12;letter-spacing:-.045em;margin:10px 0 0}
-    .section-intro{max-width:440px;color:var(--muted);font-size:14px;margin:0}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
-    .card{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:25px;background:linear-gradient(145deg,rgba(17,24,36,.94),rgba(11,16,25,.96));transition:transform .22s,border-color .22s}
-    .card:hover{transform:translateY(-4px);border-color:#49627b}
-    .card-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:24px}
-    .iconbox{height:42px;width:42px;display:grid;place-items:center;border:1px solid #304256;border-radius:13px;color:var(--cyan);background:#101e2a;font:17px ui-monospace,monospace}
-    .small-label{color:#8291a6;font:10px ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
-    h3{font-size:19px;letter-spacing:-.025em;margin:0 0 9px}
-    .card p{color:var(--muted);font-size:13px;margin:0;line-height:1.8}
-    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:19px}
-    .tag{font:10px ui-monospace,monospace;color:#b5c5d8;border:1px solid #2b3748;border-radius:7px;padding:5px 8px;background:rgba(255,255,255,.02)}
-    .card-link{display:inline-flex;margin-top:22px;gap:8px;align-items:center;font-size:12px;color:var(--cyan);font-weight:650}
-    .focus-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-    .focus{border:1px solid var(--line);border-radius:18px;padding:22px;background:rgba(15,21,32,.66)}
-    .focus-num{font:12px ui-monospace,monospace;color:var(--cyan)}
-    .focus h3{font-size:16px;margin:15px 0 7px}
-    .focus p{font-size:12px;color:var(--muted);margin:0}
-    .about{display:grid;grid-template-columns:.7fr 1.3fr;gap:55px;align-items:start}
-    .about-aside{padding:25px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(150deg,#111c2a,#0b1018)}
-    .about-aside .big{font-size:35px;font-weight:750;letter-spacing:-.06em;color:var(--cyan)}
-    .about-aside p{font-size:12px;color:var(--muted);margin:3px 0 0}
-    .about-copy p{color:#b0bdce;font-size:14px;margin:0 0 16px}
-    .about-copy strong{color:var(--text);font-weight:650}
-    .skill-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}
-    .skill{padding:8px 11px;border:1px solid #2a3749;border-radius:9px;color:#bdc9d8;font-size:11px;background:rgba(255,255,255,.02)}
-    .contact{position:relative;overflow:hidden;border:1px solid #30445a;border-radius:26px;padding:clamp(28px,5vw,55px);background:radial-gradient(ellipse at 100% 0%,rgba(103,232,249,.11),transparent 42%),linear-gradient(135deg,#111a28,#0b1018)}
-    .contact h2{max-width:650px}
-    .contact p{color:var(--muted);max-width:580px;font-size:14px}
-    .contact-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
-    footer{padding:28px 0 35px;color:#718096;font-size:11px}
-    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;border-top:1px solid rgba(155,168,186,.13);padding-top:22px}
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-    @media(max-width:800px){.hero{grid-template-columns:1fr;gap:36px;padding:78px 0 65px;min-height:auto}.terminal{max-width:560px}.section-head{display:block}.section-intro{margin-top:15px}.about{grid-template-columns:1fr;gap:24px}.focus-grid{grid-template-columns:1fr}.navlinks{gap:14px}.navlinks a:not(.nav-cta){display:none}}
-    @media(max-width:560px){.wrap{width:min(calc(100% - 28px),var(--max))}.nav-inner{height:64px}.nav-cta{padding:9px 12px}.hero{padding-top:64px}h1{font-size:47px}.grid{grid-template-columns:1fr}.card{padding:21px}.section{padding:57px 0}.quickfacts{gap:12px}.footer-inner{align-items:flex-start;flex-direction:column}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080914">
+<meta name="description" content="Naman Kumar Sonker — cybersecurity, systems engineering, privacy-first AI, and practical software projects.">
+<meta property="og:title" content="Naman Kumar Sonker — Cybersecurity & Systems">
+<meta property="og:description" content="Inspect the system. Understand the risk. Build with intent.">
+<title>Naman Kumar Sonker — Cybersecurity & Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070812;--panel:#101326;--panel2:#14182e;--line:#292d4b;--text:#f7f7ff;--muted:#a5a8c3;--purple:#b84bff;--pink:#ff4eb8;--cyan:#43d9f4;--lime:#d5f76a;--gold:#ffd166;--mono:"DM Mono",monospace;--sans:Manrope,system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.55;overflow-x:hidden}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}.wrap{width:min(1240px,calc(100% - 40px));margin:auto}.grain{position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E")}.glow{position:absolute;border-radius:50%;filter:blur(85px);opacity:.2;pointer-events:none}.topbar{position:sticky;top:0;z-index:20;background:#080914dc;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff12}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{font-weight:800;letter-spacing:-.06em;font-size:22px}.brand span{color:var(--pink)}.navlinks{display:flex;align-items:center;gap:23px;color:#d7d7e8;font-size:12px;font-weight:700}.navlinks a{transition:color .2s}.navlinks a:hover{color:var(--pink)}.connect{border:0;border-radius:999px;padding:11px 17px;color:#fff;font-weight:800;font-size:12px;background:linear-gradient(110deg,#8e32e8,#d53db7);box-shadow:0 0 24px #b84bff2c}.hero{min-height:560px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid #ffffff0b}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% 38%,#5c24a83a,transparent 38%),radial-gradient(ellipse at 5% 80%,#007b9d25,transparent 34%);pointer-events:none}.hero-copy{position:relative;z-index:2;padding:72px 0 64px}.eyebrow{font:11px var(--mono);letter-spacing:.18em;color:var(--cyan);text-transform:uppercase;display:flex;align-items:center;gap:10px}.dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 15px var(--lime)}.scribble{font-family:"Permanent Marker",cursive;color:var(--pink);font-size:17px;transform:rotate(-5deg);display:inline-block}.hello{font-size:clamp(23px,3vw,36px);font-weight:600;margin:24px 0 0;color:#d8d8e9}.hero h1{font-size:clamp(54px,8vw,102px);line-height:.96;letter-spacing:-.085em;margin:4px 0 18px;font-weight:800}.hero h1 .accent{color:transparent;-webkit-text-stroke:1px var(--pink);text-shadow:0 0 36px #ff4eb821}.role{font-size:clamp(17px,2vw,23px);font-weight:600;line-height:1.4;max-width:550px}.role em{font-style:normal;color:var(--cyan)}.hero-desc{color:var(--muted);max-width:520px;font-size:14px;margin:22px 0}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:999px;font-size:12px;font-weight:800;border:1px solid var(--line);transition:transform .2s,border-color .2s}.btn:hover{transform:translateY(-3px);border-color:var(--cyan)}.btn.primary{background:linear-gradient(100deg,#ff3eac,#b02dff);border-color:transparent;color:#fff;box-shadow:0 8px 30px #df32b629}.btn.ghost{background:#0d1020}.hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:29px;font:10px var(--mono);letter-spacing:.07em;color:#bfc3da}.hero-tags span:after{content:"•";color:var(--pink);margin-left:9px}.hero-tags span:last-child:after{content:""}.hero-art{min-height:500px;position:relative;display:grid;place-items:center}.orbit{position:absolute;width:min(36vw,420px);aspect-ratio:1;border:1px solid #a34bff3d;border-radius:50%;box-shadow:inset 0 0 70px #853aff0d,0 0 70px #6c35ff0d}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #4ad9f43b;border-radius:50%;inset:35px}.orbit:after{inset:72px;border-color:#ff4eb83d}.avatar-card{position:relative;width:min(90%,410px);padding:14px;border-radius:26px;background:linear-gradient(145deg,#ffffff12,#ffffff03);border:1px solid #ffffff25;box-shadow:0 30px 100px #0008;transform:rotate(2deg)}.avatar-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font:10px var(--mono);padding:5px 4px 12px}.avatar{height:320px;border-radius:17px;overflow:hidden;position:relative;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 38%,#542c88 0,transparent 42%),linear-gradient(155deg,#171c3a,#090b19 72%)}.avatar:before{content:"";position:absolute;width:235px;height:235px;border-radius:50%;background:linear-gradient(140deg,#fa4db6,#7738ff 60%,#42d9f4);filter:blur(1px);opacity:.9;top:40px}.avatar img{position:relative;width:100%;height:100%;object-fit:cover;object-position:center 30%;mix-blend-mode:normal;opacity:.92}.avatar-placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px}.avatar-placeholder .monogram{font-size:100px;line-height:1;font-weight:800;letter-spacing:-.12em;color:#fff;text-shadow:0 8px 50px #ff4eb86b}.avatar-placeholder p{font:10px var(--mono);color:#c4c7e2;letter-spacing:.14em}.floating-note{position:absolute;z-index:3;padding:12px 14px;background:#101327eb;border:1px solid #ffffff20;border-radius:12px;box-shadow:0 12px 40px #0007;font:10px var(--mono);color:#e7e8ff}.floating-note strong{display:block;color:var(--cyan);font-size:11px;margin-bottom:4px}.note-a{left:-5px;top:17%}.note-b{right:-5px;bottom:16%}.note-c{left:5%;bottom:6%;color:var(--lime)}.spark{position:absolute;font-family:"Permanent Marker",cursive;color:var(--pink);font-size:20px}.spark.a{right:8%;top:9%;transform:rotate(10deg)}.spark.b{left:0;bottom:18%;transform:rotate(-9deg)}.section{padding:26px 0}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:17px}.section-title{font-size:23px;font-weight:800;letter-spacing:-.05em;margin:0;display:flex;align-items:center;gap:11px}.section-title .ico{width:39px;height:39px;display:grid;place-items:center;border-radius:13px;background:#3cd9f41b;border:1px solid #43d9f433;color:var(--cyan);font-size:19px}.section-title.purple .ico{background:#b84bff1c;border-color:#b84bff40;color:#d58aff}.section-title.lime .ico{background:#d5f76a15;border-color:#d5f76a35;color:var(--lime)}.section-title.gold .ico{background:#ffd16617;border-color:#ffd16635;color:var(--gold)}.section-kicker{font:10px var(--mono);color:var(--muted);letter-spacing:.08em}.grid-2{display:grid;grid-template-columns:.92fr 1.08fr;gap:16px}.panel{background:linear-gradient(145deg,#111528,#0c0e1b);border:1px solid #ffffff12;border-radius:19px;padding:23px;position:relative;overflow:hidden}.panel:after{content:"";position:absolute;width:180px;height:180px;right:-100px;top:-100px;background:var(--panel-glow,#43d9f4);filter:blur(85px);opacity:.1;pointer-events:none}.about-text{color:#c3c6dd;font-size:13px}.about-text strong{color:#fff}.link-arrow{color:var(--pink);font-size:12px;font-weight:800;margin-top:14px;display:inline-block}.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:21px}.stat{padding:13px 10px;border:1px solid #ffffff10;background:#ffffff04;border-radius:12px}.stat strong{display:block;font-size:22px;letter-spacing:-.06em}.stat small{color:var(--muted);font-size:10px}.skill-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.pill{border:1px solid #343953;border-radius:999px;padding:6px 10px;color:#c6c8dc;font-size:10px;background:#0c0f1e}.pill.active{border-color:#48d7f1a8;color:var(--cyan);background:#43d9f411}.skill-icons{display:grid;grid-template-columns:repeat(4,1fr);gap:13px 9px}.skill{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;color:#d5d7e9;font-size:10px}.skill .symbol{height:38px;min-width:38px;display:grid;place-items:center;border-radius:12px;background:#ffffff07;border:1px solid #ffffff12;font:13px var(--mono);color:var(--cyan)}.timeline{display:flex;flex-direction:column;gap:0}.timeline-item{display:grid;grid-template-columns:95px 1fr;gap:15px;padding:13px 0;border-bottom:1px solid #ffffff12}.timeline-item:last-child{border:0;padding-bottom:0}.date{font:10px var(--mono);color:var(--cyan);line-height:1.7}.timeline-item h3{font-size:12px;margin:0 0 4px}.timeline-item p{font-size:11px;color:var(--muted);margin:0}.projects-top{display:flex;align-items:center;gap:12px}.live-badge{font:9px var(--mono);color:var(--lime);border:1px solid #d5f76a38;background:#d5f76a0d;padding:5px 8px;border-radius:999px;white-space:nowrap}.project-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.search{width:190px;background:#0b0d1a;border:1px solid #292d4b;border-radius:999px;color:#fff;padding:9px 13px;font-size:11px;outline:none}.search:focus{border-color:var(--cyan)}.project-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.project-card{min-height:205px;display:flex;flex-direction:column;padding:16px;background:linear-gradient(155deg,#151932,#0d1020);border:1px solid #ffffff14;border-radius:15px;transition:transform .22s,border-color .22s,background .22s;position:relative;overflow:hidden}.project-card:hover{transform:translateY(-4px);border-color:#b84bff8a;background:linear-gradient(155deg,#1b1d3d,#101224)}.project-card:before{content:"";position:absolute;inset:0 auto 0 0;width:2px;background:linear-gradient(var(--cyan),var(--purple),transparent);opacity:.6}.project-symbol{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;background:#43d9f414;border:1px solid #43d9f42b;color:var(--cyan);font-size:19px;margin-bottom:14px}.project-card h3{font-size:12px;line-height:1.4;margin:0 0 7px}.project-card p{font-size:10px;line-height:1.6;color:var(--muted);margin:0 0 14px;flex:1;overflow-wrap:anywhere}.project-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font:9px var(--mono);color:#8f94b5}.project-meta .lang{color:var(--lime)}.project-link{color:#fff}.project-link:hover{color:var(--pink)}.status-line{font:10px var(--mono);color:var(--muted);margin:13px 0 0;display:flex;align-items:center;gap:8px}.status-line .mini-dot{width:6px;height:6px;border-radius:50%;background:var(--lime)}.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:34px;border:1px dashed #343953;border-radius:14px;font-size:12px}.education-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.edu-item{display:grid;grid-template-columns:78px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid #ffffff10}.edu-item:last-child{border:0}.edu-year{font:10px var(--mono);color:var(--cyan)}.edu-item h3{font-size:12px;margin:0 0 3px}.edu-item p{font-size:10px;color:var(--muted);margin:0}.achievement{display:flex;gap:11px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #ffffff10}.achievement:last-child{border:0}.medal{flex:0 0 30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#ffd1661a;border:1px solid #ffd1664a;color:var(--gold)}.achievement h3{font-size:11px;margin:0 0 3px}.achievement p{font-size:10px;color:var(--muted);margin:0}.contact{padding:32px 0 56px}.contact-card{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:30px;background:radial-gradient(ellipse at 90% 20%,#8b31db28,transparent 38%),linear-gradient(110deg,#13172c,#0c0e1a);border:1px solid #ffffff18;border-radius:21px;position:relative;overflow:hidden}.contact-card h2{font-size:clamp(23px,4vw,36px);line-height:1.1;letter-spacing:-.06em;margin:0 0 8px}.contact-card p{font-size:12px;color:var(--muted);margin:0}.contact-links{display:flex;gap:9px;flex-wrap:wrap}.contact-links a{padding:11px 14px;border:1px solid #ffffff24;border-radius:999px;font-size:11px;font-weight:800}.contact-links a:first-child{background:linear-gradient(110deg,#9137ed,#d43fb8);border-color:transparent}.footer{padding:20px 0 28px;border-top:1px solid #ffffff10;color:#777d9c;font:10px var(--mono);display:flex;justify-content:space-between;gap:15px}.footer a{color:#b9bdd6}.loading-shimmer{height:205px;border-radius:15px;background:linear-gradient(100deg,#111528 25%,#1c2039 38%,#111528 62%);background-size:400% 100%;animation:shimmer 1.4s infinite}.hidden{display:none!important}@keyframes shimmer{0%{background-position:100% 50%}100%{background-position:0 50%}}@media(max-width:980px){.navlinks{gap:12px}.navlinks a:nth-child(n+5){display:none}.hero{grid-template-columns:1fr .78fr}.hero-art{min-height:420px}.avatar{height:280px}.project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-2{grid-template-columns:1fr 1fr}}@media(max-width:720px){.wrap{width:min(100% - 28px,540px)}.nav{height:62px}.navlinks{display:none}.hero{grid-template-columns:1fr;min-height:auto}.hero-copy{padding:48px 0 8px}.hero h1{font-size:clamp(58px,17vw,88px)}.hero-art{min-height:340px;margin-top:-5px}.orbit{width:290px}.avatar-card{width:min(78%,330px)}.avatar{height:230px}.note-a{left:0;top:14%}.note-b{right:0;bottom:12%}.note-c{left:2%;bottom:2%}.grid-2,.education-grid{grid-template-columns:1fr}.panel{padding:19px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.project-card{min-height:205px;padding:13px}.section{padding:19px 0}.section-title{font-size:20px}.section-heading{align-items:flex-start;flex-direction:column}.project-controls{width:100%}.search{flex:1;width:100%}.timeline-item{grid-template-columns:84px 1fr;gap:10px}.contact-card{align-items:flex-start;flex-direction:column;padding:24px}.footer{flex-direction:column}.skill-icons{grid-template-columns:repeat(4,1fr)}}@media(max-width:380px){.project-grid{grid-template-columns:1fr}.hero-actions .btn{padding:12px 14px}.stat strong{font-size:18px}}
+</style>
 </head>
 <body>
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#home" aria-label="Naman Kumar Sonker home"><span class="mark">NM</span><span>namanmic<span style="color:var(--cyan)">.</span></span></a>
-      <nav class="navlinks" aria-label="Main navigation">
-        <a href="#work">Selected work</a><a href="#focus">Focus</a><a href="#about">About</a>
-        <a class="nav-cta" href="#contact">Get in touch ↗</a>
-      </nav>
+<div class="grain"></div>
+<header class="topbar">
+  <nav class="nav wrap" aria-label="Main navigation">
+    <a class="brand" href="#home">NAMAN<span>•</span></a>
+    <div class="navlinks">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#achievements">Highlights</a>
     </div>
-  </header>
-
-  <main>
-    <section class="wrap hero" id="home">
-      <div>
-        <div class="eyebrow"><span class="pulse"></span> Cybersecurity · Systems · Engineering</div>
-        <h1>Understanding<br>what happens <span class="accent">under the hood.</span></h1>
-        <p class="lead">I’m Naman — a cybersecurity and digital forensics student interested in how modern applications authenticate users, move data, protect privacy, and fail.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
-          <a class="btn" href="https://github.com/nksdev" target="_blank" rel="noreferrer">GitHub profile ↗</a>
-        </div>
-        <div class="quickfacts">
-          <span><b>01</b> Security-minded engineering</span>
-          <span><b>02</b> Systems thinking</span>
-          <span><b>03</b> Privacy-first design</span>
-        </div>
-      </div>
-      <aside class="terminal" aria-label="Technical interests preview">
-        <div class="term-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="term-label">namanmic / focus.json</span></div>
-        <div class="term-code">
-          <span class="dim">{</span><br>
-          &nbsp;&nbsp;<span class="key">"identity"</span>: <span class="val">"security + systems"</span>,<br>
-          &nbsp;&nbsp;<span class="key">"interests"</span>: <span class="dim">[</span><br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"application security"</span>,<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"architecture analysis"</span>,<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"digital forensics"</span>,<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"privacy-first AI"</span><br>
-          &nbsp;&nbsp;<span class="dim">]</span>,<br>
-          &nbsp;&nbsp;<span class="key">"approach"</span>: <span class="purple">"inspect → test → explain"</span><br>
-          <span class="dim">}</span>
-        </div>
-        <div class="term-bottom"><span>PROFILE: ENGINEERING-LED</span><span>STATUS: LEARNING / BUILDING</span></div>
-      </aside>
-    </section>
-
-    <section class="section" id="work">
-      <div class="wrap">
-        <div class="section-head">
-          <div><div class="kicker">01 / Selected work</div><h2>Projects worth exploring.</h2></div>
-          <p class="section-intro">A selection of repositories from my GitHub. Project descriptions are intentionally high-level; open each repository for its implementation, current status, and documentation.</p>
-        </div>
-        <div class="grid">
-          <article class="card">
-            <div class="card-top"><span class="iconbox">01</span><span class="small-label">AI · Knowledge systems</span></div>
-            <h3>The Brain AI</h3>
-            <p>A project exploring AI-assisted knowledge synthesis and multi-document interaction. See the repository for the implementation and supported capabilities.</p>
-            <div class="tags"><span class="tag">AI systems</span><span class="tag">Knowledge retrieval</span><span class="tag">Python</span></div>
-            <a class="card-link" href="https://github.com/nksdev/THE-BRAIN-AI" target="_blank" rel="noreferrer">Inspect repository ↗</a>
-          </article>
-          <article class="card">
-            <div class="card-top"><span class="iconbox">02</span><span class="small-label">Privacy · Web app</span></div>
-            <h3>Privacy-First Cycle Tracker</h3>
-            <p>A browser-based menstrual health tracker focused on local data persistence, cycle insights, and an integrated AI chat experience.</p>
-            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Privacy</span></div>
-            <a class="card-link" href="https://github.com/nksdev/privacy-first-cycle-tracker" target="_blank" rel="noreferrer">Inspect repository ↗</a>
-          </article>
-          <article class="card">
-            <div class="card-top"><span class="iconbox">03</span><span class="small-label">Cyber awareness · Browser security</span></div>
-            <h3>SecureShare — Permission Abuse Demo</h3>
-            <p>A browser-security awareness demo showing how deceptive permission prompts can be misused to access browser APIs and collect user and device data. The source contains invasive data-collection behavior; this is not a file-sharing product. Treat it as a high-risk proof of concept and inspect it only in an isolated, authorized lab.</p>
-            <div class="tags"><span class="tag">Browser permissions</span><span class="tag">Social engineering</span><span class="tag">Privacy risks</span></div>
-            <a class="card-link" href="https://github.com/nksdev/secureshare" target="_blank" rel="noreferrer">Inspect repository ↗</a>
-          </article>
-          <article class="card">
-            <div class="card-top"><span class="iconbox">04</span><span class="small-label">Web · Publishing</span></div>
-            <h3>Systems Blog Platform</h3>
-            <p>A web platform repository connected to my interest in explaining the architecture and behavior of modern software systems.</p>
-            <div class="tags"><span class="tag">Web engineering</span><span class="tag">Systems thinking</span></div>
-            <a class="card-link" href="https://github.com/nksdev/systems-blog-platform" target="_blank" rel="noreferrer">Inspect repository ↗</a>
-          </article>
+    <a class="connect" href="#contact">Let's Connect ↗</a>
+  </nav>
+</header>
+<main>
+<section class="hero wrap" id="home">
+  <div class="glow" style="width:300px;height:300px;background:#7c3aed;right:0;top:20%"></div>
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="dot"></span> CYBERSECURITY · SYSTEMS · SOFTWARE</div>
+    <p class="hello">Hey, I'm</p>
+    <h1>NAMAN<span class="accent">.</span></h1>
+    <div class="role">Cybersecurity Student<br><em>Systems Thinker & Builder</em></div>
+    <p class="hero-desc">I explore how systems work, where they break, and how to make them safer. Interested in application security, digital forensics, privacy-first AI, and practical automation.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#projects">▶ Explore My Work</a>
+      <a class="btn ghost" href="https://github.com/nksdev" target="_blank" rel="noopener">↗ GitHub Profile</a>
+    </div>
+    <div class="hero-tags"><span>INSPECT</span><span>ANALYZE</span><span>BUILD</span><span>LEARN</span><span>REPEAT</span></div>
+  </div>
+  <div class="hero-art" aria-label="Decorative cybersecurity profile artwork">
+    <div class="orbit"></div>
+    <span class="spark a">Ideas into impact ↘</span><span class="spark b">Build. Break. Learn.</span>
+    <div class="floating-note note-a"><strong>01 / SECURITY</strong>Think in threat models</div>
+    <div class="floating-note note-b"><strong>02 / SYSTEMS</strong>Trace the full flow</div>
+    <div class="floating-note note-c">PRIVACY BY DESIGN</div>
+    <div class="avatar-card">
+      <div class="avatar-top"><span>NKSDEV / PROFILE</span><span>● AVAILABLE TO LEARN</span></div>
+      <div class="avatar">
+        <div class="avatar-placeholder">
+          <div><div class="monogram">N<span style="color:var(--pink)">.</span></div><p>CYBERSECURITY · SYSTEMS · AI</p></div>
         </div>
       </div>
-    </section>
+      <div class="avatar-top" style="padding:12px 4px 3px"><span>NO SHORTCUTS. JUST SYSTEMS.</span><span>v.2026</span></div>
+    </div>
+  </div>
+</section>
 
-    <section class="section" id="focus">
-      <div class="wrap">
-        <div class="section-head">
-          <div><div class="kicker">02 / Technical focus</div><h2>Curiosity with a method.</h2></div>
-          <p class="section-intro">The areas I’m developing through coursework, independent projects, and hands-on experimentation.</p>
-        </div>
-        <div class="focus-grid">
-          <article class="focus"><div class="focus-num">FOCUS_01</div><h3>Application security</h3><p>Authentication and session flows, authorization boundaries, web security testing, and secure-by-design patterns.</p></article>
-          <article class="focus"><div class="focus-num">FOCUS_02</div><h3>Systems & networks</h3><p>Understanding components, protocols, data flows, trust boundaries, and how services interact.</p></article>
-          <article class="focus"><div class="focus-num">FOCUS_03</div><h3>Digital forensics</h3><p>Evidence integrity, structured investigation, artifact analysis, and repeatable technical documentation.</p></article>
-          <article class="focus"><div class="focus-num">FOCUS_04</div><h3>Privacy-first engineering</h3><p>Minimizing data collection, understanding local storage risks, and making privacy trade-offs explicit.</p></article>
-          <article class="focus"><div class="focus-num">FOCUS_05</div><h3>AI systems</h3><p>Exploring knowledge workflows, model integrations, and the security boundaries around AI applications.</p></article>
-          <article class="focus"><div class="focus-num">FOCUS_06</div><h3>Technical communication</h3><p>Turning complex implementation details into architecture diagrams, practical write-ups, and clear explanations.</p></article>
-        </div>
-      </div>
-    </section>
+<section class="section wrap" id="about">
+ <div class="grid-2">
+  <article class="panel" style="--panel-glow:var(--cyan)">
+   <h2 class="section-title"><span class="ico">◉</span> About Me</h2>
+   <p class="about-text">I'm a Computer Science and Engineering student specializing in <strong>Cybersecurity & Digital Forensics</strong>. I like understanding systems from the inside out — from application behavior and trust boundaries to automation, local AI, and privacy-conscious software.</p>
+   <p class="about-text">My approach: learn the fundamentals, test assumptions, document what works, and build projects that solve concrete problems.</p>
+   <a class="link-arrow" href="https://www.linkedin.com/in/namanmic" target="_blank" rel="noopener">More about my work ↗</a>
+   <div class="stat-row">
+    <div class="stat"><strong>Cyber</strong><small>Security & forensics</small></div>
+    <div class="stat"><strong>AI</strong><small>Local-first systems</small></div>
+    <div class="stat"><strong>Build</strong><small>Practical projects</small></div>
+   </div>
+  </article>
+  <article class="panel" id="experience" style="--panel-glow:var(--purple)">
+   <h2 class="section-title purple"><span class="ico">▣</span> Experience</h2>
+   <div class="timeline">
+    <div class="timeline-item"><div class="date">MAY – JUL 2026</div><div><h3>PNB · Information Security Internship</h3><p>Exposure to privileged access management, web application security assessment, and AI/LLM security workflows.</p></div></div>
+    <div class="timeline-item"><div class="date">JUN – JUL 2025</div><div><h3>Regional Reference Standards Laboratory</h3><p>Government of India · Internship experience in a technical laboratory environment.</p></div></div>
+    <div class="timeline-item"><div class="date">JUN 2022</div><div><h3>Solid State Physics Laboratory · DRDO</h3><p>Technical exposure at a defence research laboratory.</p></div></div>
+    <div class="timeline-item"><div class="date">ONGOING</div><div><h3>Independent Projects & Research</h3><p>Local AI, security utilities, software engineering, and privacy-first applications.</p></div></div>
+   </div>
+  </article>
+  <article class="panel" id="skills" style="--panel-glow:var(--purple)">
+   <h2 class="section-title purple"><span class="ico">⚙</span> Skills & Tooling</h2>
+   <div class="skill-tabs"><span class="pill active">Cybersecurity</span><span class="pill">Development</span><span class="pill">AI Systems</span><span class="pill">Forensics</span></div>
+   <div class="skill-icons">
+    <div class="skill"><span class="symbol">BURP</span>Burp Suite</div><div class="skill"><span class="symbol">NMAP</span>Nmap</div><div class="skill"><span class="symbol">WI</span>Wireshark</div><div class="skill"><span class="symbol">GH</span>Ghidra</div>
+    <div class="skill"><span class="symbol">PY</span>Python</div><div class="skill"><span class="symbol">DART</span>Dart / Flutter</div><div class="skill"><span class="symbol">LIN</span>Linux</div><div class="skill"><span class="symbol">LLM</span>Ollama / LLMs</div>
+   </div>
+  </article>
+  <article class="panel" style="--panel-glow:var(--pink)">
+   <h2 class="section-title purple"><span class="ico">⌘</span> What I Explore</h2>
+   <div class="timeline">
+    <div class="timeline-item"><div class="date">01 / SEC</div><div><h3>Application & Web Security</h3><p>Threat modeling, access control, vulnerability assessment, secure coding.</p></div></div>
+    <div class="timeline-item"><div class="date">02 / DFIR</div><div><h3>Digital Forensics</h3><p>Evidence integrity, system artifacts, investigation workflows.</p></div></div>
+    <div class="timeline-item"><div class="date">03 / AI</div><div><h3>Privacy-first AI</h3><p>Local models, document synthesis, practical AI application architecture.</p></div></div>
+   </div>
+  </article>
+ </div>
+</section>
 
-    <section class="section" id="about">
-      <div class="wrap about">
-        <aside class="about-aside">
-          <div class="kicker">About me</div>
-          <div class="big">Learn.<br>Inspect.<br>Build.</div>
-          <p class="mono">A practical approach to understanding technology.</p>
-        </aside>
-        <div class="about-copy">
-          <div class="kicker">03 / Background</div>
-          <h2>Engineering beyond the surface.</h2>
-          <p>I’m pursuing a <strong>B.Tech in Computer Science and Engineering with a specialization in Cybersecurity and Digital Forensics</strong>. I’m building a foundation in application security, systems analysis, and software development.</p>
-          <p>I’m most interested in work that combines investigation with implementation: tracing a request through a system, identifying where trust is assumed, testing those assumptions, and documenting what the evidence shows.</p>
-          <p>This portfolio is a living record of that process. I aim to show not only what I build, but also how I reason about design decisions, limitations, and security trade-offs.</p>
-          <div class="skill-list"><span class="skill">Python</span><span class="skill">Linux</span><span class="skill">Git & GitHub</span><span class="skill">Web security</span><span class="skill">Networking</span><span class="skill">Digital forensics</span><span class="skill">System design</span><span class="skill">AI integrations</span></div>
-        </div>
-      </div>
-    </section>
+<section class="section wrap" id="projects">
+ <div class="section-heading">
+  <div><h2 class="section-title lime"><span class="ico">▤</span> Projects & Experiments</h2><div class="section-kicker" style="margin:8px 0 0 51px">PROJECTS PULLED DIRECTLY FROM GITHUB</div></div>
+  <div class="project-controls"><span class="live-badge">● LIVE REPOSITORY FEED</span><input id="projectSearch" class="search" type="search" placeholder="Search repositories…" aria-label="Search repositories"><button id="refreshRepos" class="pill" type="button">↻ Refresh</button></div>
+ </div>
+ <div id="projectGrid" class="project-grid" aria-live="polite">
+  <div class="loading-shimmer"></div><div class="loading-shimmer"></div><div class="loading-shimmer"></div><div class="loading-shimmer"></div>
+ </div>
+ <p id="repoStatus" class="status-line"><span class="mini-dot"></span> Connecting to the public GitHub repository feed…</p>
+</section>
 
-    <section class="section" id="contact">
-      <div class="wrap">
-        <div class="contact">
-          <div class="kicker">04 / Contact</div>
-          <h2>Have a system worth understanding?</h2>
-          <p>I’m interested in thoughtful engineering, security research, and opportunities to learn by solving real technical problems. Explore my work or connect with me.</p>
-          <div class="contact-links">
-            <a class="btn btn-primary" href="https://github.com/nksdev" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a class="btn" href="https://linkedin.com/in/namanmic" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a class="btn" href="https://x.com/namanmic" target="_blank" rel="noreferrer">X / Twitter ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="wrap footer-inner"><span>© <span id="year"></span> Naman Kumar Sonker · namanmic</span><span class="mono">Designed for clarity, built for the details.</span></div>
-  </footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<section class="section wrap" id="education">
+ <div class="education-grid">
+  <article class="panel" style="--panel-glow:var(--cyan)">
+   <h2 class="section-title"><span class="ico">⌂</span> Education</h2>
+   <div class="edu-item"><div class="edu-year">2023–2027</div><div><h3>B.Tech · Computer Science & Engineering</h3><p>Cybersecurity & Digital Forensics · Sharda University</p></div></div>
+   <div class="edu-item"><div class="edu-year">2018–2020</div><div><h3>Polytechnic Diploma</h3><p>Electrical, Electronics & Communications Engineering · Pusa Institute of Technology</p></div></div>
+  </article>
+  <article class="panel" id="achievements" style="--panel-glow:var(--gold)">
+   <h2 class="section-title gold"><span class="ico">★</span> Certifications & Research</h2>
+   <div class="achievement"><span class="medal">✦</span><div><h3>Certified Ethical Hacker (CEH)</h3><p>EC-Council · Passed in 2026</p></div></div>
+   <div class="achievement"><span class="medal">✦</span><div><h3>Cybersecurity Fundamentals (CCYF)</h3><p>Certification · 2026</p></div></div>
+   <div class="achievement"><span class="medal">✦</span><div><h3>Research: THE BRAIN AI</h3><p>Multi-document knowledge synthesis and chat · IJCRT</p></div></div>
+   <div class="achievement"><span class="medal">✦</span><div><h3>Research: Adaptive Signal Traffic Control</h3><p>IoT sensors and OCR-based emergency detection</p></div></div>
+  </article>
+ </div>
+</section>
+
+<section class="contact wrap" id="contact">
+ <div class="contact-card">
+  <div><p class="scribble" style="margin-bottom:12px">Have a good problem?</p><h2>Let's build something<br><span style="color:var(--pink)">useful & secure.</span></h2><p>Open to learning, collaboration, and practical engineering conversations.</p></div>
+  <div class="contact-links"><a href="mailto:namanmic@gmail.com">✉ Email</a><a href="https://www.linkedin.com/in/namanmic" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/nksdev" target="_blank" rel="noopener">GitHub ↗</a></div>
+ </div>
+</section>
+</main>
+<footer class="footer wrap"><span>© <span id="year"></span> NAMAN KUMAR SONKER · BUILT WITH INTENT</span><span><a href="#home">BACK TO TOP ↑</a> · <a href="https://github.com/nksdev/nksdev">SOURCE</a></span></footer>
+<script>
+(function(){
+"use strict";
+const USER="nksdev";
+const grid=document.getElementById("projectGrid");
+const status=document.getElementById("repoStatus");
+const search=document.getElementById("projectSearch");
+const refresh=document.getElementById("refreshRepos");
+let repositories=[];
+document.getElementById("year").textContent=new Date().getFullYear();
+const symbols={"Python":"⌘","JavaScript":"JS","TypeScript":"TS","HTML":"◇","CSS":"▧","Dart":"◈","Java":"☕","Jupyter Notebook":"▦","Shell":"$_","C":"C","C++":"C++","Kotlin":"K","Swift":"S","Rust":"R"};
+const featuredOrder=["THE-BRAIN-AI","privacy-first-cycle-tracker","secureshare","systems-blog-platform","BetaKinetics","smart-budget-system","gguf-ai_model_ai-server-","github-manager"];
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function iconFor(repo){return symbols[repo.language]||"⌘";}
+function render(){
+ const q=search.value.trim().toLowerCase();
+ const items=repositories.filter(r=>(r.name+" "+(r.description||"")+" "+(r.language||"")+" "+(r.topics||[]).join(" ")).toLowerCase().includes(q));
+ if(!items.length){grid.innerHTML='<div class="empty">No repositories match that search. Try another keyword.</div>';return;}
+ grid.innerHTML=items.map(r=>{
+  const desc=r.description||"A public repository by Naman Kumar Sonker. Open the repository to inspect its source and documentation.";
+  const language=r.language||"Repository";
+  const stars=Number(r.stargazers_count||0);
+  return '<a class="project-card" href="'+esc(r.html_url)+'" target="_blank" rel="noopener noreferrer" aria-label="Open '+esc(r.name)+' on GitHub"><div class="project-symbol">'+esc(iconFor(r))+'</div><h3>'+esc(r.name.replace(/-/g," "))+'</h3><p>'+esc(desc)+'</p><div class="project-meta"><span class="lang">'+esc(language)+'</span><span>★ '+stars+' &nbsp; ↗</span></div></a>';
+ }).join("");
+}
+async function loadRepos(){
+ refresh.disabled=true;refresh.textContent="Loading…";
+ status.innerHTML='<span class="mini-dot"></span> Fetching public repositories from GitHub…';
+ try{
+  let all=[],page=1;
+  while(page<=10){
+   const response=await fetch("https://api.github.com/users/"+USER+"/repos?type=owner&sort=updated&per_page=100&page="+page,{headers:{"Accept":"application/vnd.github+json"}});
+   if(!response.ok)throw new Error(response.status===403||response.status===429?"GitHub API rate limit reached. Try again in a few minutes.":"GitHub API returned HTTP "+response.status+".");
+   const batch=await response.json();
+   if(!Array.isArray(batch))throw new Error("Unexpected response from GitHub.");
+   all=all.concat(batch.filter(r=>!r.private&&!r.fork&&!r.archived));
+   if(batch.length<100)break;
+   page++;
+  }
+  const order=new Map(featuredOrder.map((name,i)=>[name,i]));
+  repositories=all.sort((a,b)=>{
+   const ai=order.has(a.name)?order.get(a.name):999;
+   const bi=order.has(b.name)?order.get(b.name):999;
+   return ai-bi||new Date(b.pushed_at||b.updated_at)-new Date(a.pushed_at||a.updated_at);
+  });
+  render();
+  const time=new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
+  status.innerHTML='<span class="mini-dot"></span> '+repositories.length+' public, non-fork repositories · synced '+esc(time)+' · refreshes from GitHub on page load';
+ }catch(error){
+  if(!repositories.length)grid.innerHTML='<div class="empty">Could not load repositories. <button id="retryRepos" class="pill" type="button">Try again</button><br><br>'+esc(error.message)+'</div>';
+  status.innerHTML='<span class="mini-dot" style="background:var(--pink)"></span> Live feed unavailable: '+esc(error.message);
+  const retry=document.getElementById("retryRepos");if(retry)retry.addEventListener("click",loadRepos);
+ }finally{refresh.disabled=false;refresh.textContent="↻ Refresh";}
+}
+search.addEventListener("input",render);
+refresh.addEventListener("click",loadRepos);
+loadRepos();
+})();
+</script>
 </body>
 </html>
