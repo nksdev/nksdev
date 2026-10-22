@@ -131,6 +131,42 @@ body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),rad
 @media(max-width:680px){.hero-blended{display:flex;flex-direction:column;padding-top:18px;min-height:0}.hero-blended-copy{padding:15px 4px 0;max-width:none}.hero-greeting{margin-top:18px}.hero-name{font-size:clamp(64px,18vw,92px)}.hero-fullname{font-size:25px}.hero-summary{font-size:13px}.hero-blended-art{width:calc(100% + 28px);margin:0 -14px -8px;min-height:280px;height:62vw;max-height:390px;mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 86%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 86%,transparent 100%)}.hero-blended-art img{object-position:70% center;transform:scale(1.02)}.art-note{font-size:10px}.hero-mantra{font-size:8px}.principles{gap:8px}.principle{padding:11px 9px;gap:8px}.principle-icon{width:34px;height:34px;font-size:17px}.principle small{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.hero-blended-art img{animation:none;transition:none}}
 
+/* Project cards and in-page README reader */
+.project-card{cursor:pointer;display:flex;flex-direction:column;min-height:235px;gap:12px;padding:20px;border:1px solid #292d4b;border-radius:16px;background:linear-gradient(145deg,#10162b,#080b18);color:var(--text);text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s;outline:none}
+.project-card:hover,.project-card:focus-visible{transform:translateY(-3px);border-color:var(--cyan);box-shadow:0 14px 38px #0005,0 0 22px #43d9f412}
+.project-card-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.project-card h3{margin:0;font-size:17px;line-height:1.35}
+.project-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.7}
+.project-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.project-tags span{font:9px var(--mono);color:#b8d8ef;border:1px solid #283b55;background:#101a2a;border-radius:6px;padding:4px 7px}
+.project-card-foot{border-top:1px solid #ffffff10;padding-top:11px;margin-top:4px;display:flex;align-items:center;justify-content:space-between}
+.read-label{color:var(--cyan)}
+.readme-panel{margin-top:25px;margin-bottom:25px;padding:clamp(18px,3vw,32px);border:1px solid #35405d;border-radius:20px;background:radial-gradient(ellipse at 90% 0%,#692ba520,transparent 35%),linear-gradient(145deg,#10172a,#080b16);box-shadow:0 25px 65px #0005;scroll-margin-top:92px}
+.readme-panel[hidden]{display:none}
+.readme-panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;border-bottom:1px solid #2a344d;padding-bottom:18px;margin-bottom:20px}
+.readme-eyebrow{font:10px var(--mono);letter-spacing:.16em;color:var(--cyan)}
+.readme-panel-head h2{font-size:clamp(22px,3vw,32px);margin:7px 0;letter-spacing:-.04em}
+.readme-panel-head p{margin:0;color:var(--muted);font-size:12px}
+.readme-close{flex:none}
+.readme-body{color:#d0d6e8;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+.readme-body h2{font-size:22px;color:#fff;margin:25px 0 10px}
+.readme-body h3{font-size:17px;color:var(--cyan);margin:23px 0 8px}
+.readme-body h4{font-size:14px;color:#e8caff;margin:18px 0 6px}
+.readme-body p{margin:10px 0}
+.readme-body ul{padding-left:22px;margin:8px 0 14px}
+.readme-body li{padding:2px 0}
+.readme-body strong{color:#fff}
+.readme-body a{color:#73e6ff;text-decoration:underline;text-underline-offset:3px}
+.readme-body code{font-family:var(--mono);font-size:.91em;color:#ffc1eb;background:#17152a;border:1px solid #2e2947;border-radius:5px;padding:2px 5px}
+.readme-body pre{overflow:auto;padding:16px;background:#060914;border:1px solid #252d44;border-radius:12px;color:#c5efff;font:11px/1.7 var(--mono)}
+.readme-body pre code{padding:0;border:0;background:transparent;color:inherit}
+.readme-body blockquote{border-left:3px solid var(--pink);background:#171426;padding:10px 14px;margin:14px 0;border-radius:0 8px 8px 0;color:#d9cde5}
+.readme-body table{display:block;overflow:auto}
+.readme-panel-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid #2a344d;margin-top:22px;padding-top:16px;font-size:12px}
+.readme-panel-footer a{color:var(--cyan)}
+.readme-loading{padding:30px;color:var(--muted)}
+@media(max-width:650px){.project-card{min-height:unset;padding:16px}.readme-panel-head{flex-direction:column}.readme-panel{width:calc(100% - 24px);padding:16px}}
+
 </style>
 </head>
 <body>
@@ -214,7 +250,12 @@ body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),rad
   <div><h2 class="section-title lime"><span class="ico">▤</span> Projects & Experiments</h2><div class="section-kicker" style="margin:8px 0 0 51px">PROJECTS PULLED DIRECTLY FROM GITHUB</div></div>
   <div class="project-controls"><span class="live-badge">● LIVE REPOSITORY FEED</span><input id="projectSearch" class="search" type="search" placeholder="Search repositories…" aria-label="Search repositories"><button id="refreshRepos" class="pill" type="button">↻ Refresh</button></div>
  </div>
- <div id="projectGrid" class="project-grid" aria-live="polite">
+ <div id="readmePanel" class="readme-panel wrap" hidden aria-live="polite">
+ <div class="readme-panel-head"><div><div class="readme-eyebrow">PROJECT DOCUMENTATION</div><h2 id="readmeTitle">Project README</h2><p id="readmeSubtitle">Select a repository to view its README here.</p></div><button id="closeReadme" class="pill readme-close" type="button">Close ✕</button></div>
+ <div id="readmeBody" class="readme-body"></div>
+ <div class="readme-panel-footer"><a id="openRepoLink" href="https://github.com/nksdev" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a><button id="copyRepoLink" class="pill" type="button">Copy repo link</button></div>
+</div>
+<div id="projectGrid" class="project-grid" aria-live="polite">
   <div class="loading-shimmer"></div><div class="loading-shimmer"></div><div class="loading-shimmer"></div><div class="loading-shimmer"></div>
  </div>
  <p id="repoStatus" class="status-line"><span class="mini-dot"></span> Connecting to the public GitHub repository feed…</p>
@@ -258,16 +299,87 @@ const symbols={"Python":"⌘","JavaScript":"JS","TypeScript":"TS","HTML":"◇","
 const featuredOrder=["THE-BRAIN-AI","privacy-first-cycle-tracker","secureshare","systems-blog-platform","BetaKinetics","smart-budget-system","gguf-ai_model_ai-server-","github-manager"];
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function iconFor(repo){return symbols[repo.language]||"⌘";}
+const projectDetails={
+ "THE-BRAIN-AI":{title:"THE BRAIN AI",summary:"Research-oriented local-first document knowledge synthesis using Python, Streamlit, NLP, and Ollama.",topics:["Python","Streamlit","Ollama","Document AI"],readme:"https://raw.githubusercontent.com/nksdev/THE-BRAIN-AI/main/README.md"},
+ "privacy-first-cycle-tracker":{title:"MenstruAI — Cycle Tracker",summary:"Browser-based menstrual health tracker with cycle estimates, educational resources, local records, and an external AI chat integration.",topics:["HTML","JavaScript","Health Tech"],readme:"https://raw.githubusercontent.com/nksdev/privacy-first-cycle-tracker/main/README.md"},
+ "secureshare":{title:"SecureShare — Permission Abuse Demo",summary:"Cyber-awareness proof of concept demonstrating deceptive browser permission requests and invasive client-side data collection risks. Not a file-sharing service.",topics:["Browser Security","Privacy","Awareness"],readme:"https://raw.githubusercontent.com/nksdev/secureshare/main/README.md",warning:true},
+ "systems-blog-platform":{title:"Systems Blog Platform",summary:"Static technical blog paired with a Python/Tkinter CMS and Git-based content publishing workflows.",topics:["Python","Tkinter","Static Web"],readme:"https://raw.githubusercontent.com/nksdev/systems-blog-platform/main/README.md"},
+ "BetaKinetics":{title:"BetaKinetics",summary:"Experimental React and TypeScript PWA concept for recording diabetes-related data, nutrition planning, and exploring insulin calculations. Not for treatment decisions.",topics:["React","TypeScript","PWA"],readme:"https://raw.githubusercontent.com/nksdev/BetaKinetics/main/README.md",warning:true},
+ "smart-budget-system":{title:"Smart Budget System",summary:"Browser-based budgeting tool with daily allowance estimates, expense analytics, wishlist goals, rollover, and JSON/CSV export.",topics:["HTML","JavaScript","Chart.js"],readme:"https://raw.githubusercontent.com/nksdev/smart-budget-system/main/README.md"},
+ "github-manager":{title:"GitHub Repository Manager",summary:"Python/Tkinter desktop utility for filtering repositories, cloning and downloading projects, exporting CSV reports, and managing repositories through GitHub CLI.",topics:["Python","Tkinter","GitHub CLI"],readme:"https://raw.githubusercontent.com/nksdev/github-manager/main/README.md"},
+ "systems-knowledge-base":{title:"Systems Knowledge Base",summary:"Early-stage scaffold for organizing cybersecurity, architecture, networking, Linux, and AI-systems learning notes.",topics:["Knowledge Base","Systems","Cybersecurity"],readme:"https://raw.githubusercontent.com/nksdev/systems-knowledge-base/main/README.md"},
+ "udemy-coupon-fetch":{title:"Udemy Coupon Link Finder",summary:"Python utility for finding possible course coupon and promotion links on supplied web pages.",topics:["Python","Web Parsing"],readme:"https://raw.githubusercontent.com/nksdev/udemy-coupon-fetch/main/README.md"},
+ "gguf-ai_model_ai-server-":{title:"Local GGUF AI Server",summary:"Experimental Flask service for serving a local GGUF language model with chat/completion routes, file workflows, sessions, and API-key administration.",topics:["Python","Flask","GGUF"],readme:"https://raw.githubusercontent.com/nksdev/gguf-ai_model_ai-server-/main/README.md",warning:true},
+ "Macbook_Cleaner_Pro":{title:"MacBook Cleaner Pro",summary:"Experimental Java desktop utility concept for reviewing files and managing macOS cleanup tasks; destructive operations require careful testing.",topics:["Java","macOS","Desktop"],readme:"https://raw.githubusercontent.com/nksdev/Macbook_Cleaner_Pro/main/README.md",warning:true},
+ "automate_boring_stuff_with_python":{title:"Python Automation Utilities",summary:"Small Python automation scripts, currently including a command-line DOCX merger built with python-docx and docxcompose.",topics:["Python","Automation","DOCX"],readme:"https://raw.githubusercontent.com/nksdev/automate_boring_stuff_with_python/main/README.md"},
+ "software-tools":{title:"Cybersecurity Tools Collection",summary:"Security-learning utilities for authorized ZIP archive recovery experiments and keystroke-capture research; inspect and use only in isolated, consent-based labs.",topics:["Cybersecurity","Python","Lab"],readme:"https://raw.githubusercontent.com/nksdev/software-tools/main/README.md",warning:true},
+ "nksdevblog":{title:"Namanmic Technical Blog",summary:"Static blog interface for publishing cybersecurity, software-systems, and engineering articles; post data is stored in posts.json.",topics:["HTML","JavaScript","Technical Writing"],readme:"https://raw.githubusercontent.com/nksdev/nksdevblog/main/README.md"},
+ "tools":{title:"Browser Code Editor",summary:"Static web tool for editing HTML/CSS/JavaScript snippets, previewing output, loading local text files, and downloading edits.",topics:["HTML","CSS","JavaScript"],readme:"https://raw.githubusercontent.com/nksdev/tools/main/README.md"}
+};
 function render(){
  const q=search.value.trim().toLowerCase();
- const items=repositories.filter(r=>(r.name+" "+(r.description||"")+" "+(r.language||"")+" "+(r.topics||[]).join(" ")).toLowerCase().includes(q));
+ const items=repositories.filter(r=>(r.name+" "+(r.description||"")+" "+(r.language||"")+" "+(r.topics||[]).join(" ")+" "+(projectDetails[r.name]?.summary||"")).toLowerCase().includes(q));
  if(!items.length){grid.innerHTML='<div class="empty">No repositories match that search. Try another keyword.</div>';return;}
  grid.innerHTML=items.map(r=>{
-  const desc=r.description||"A public repository by Naman Kumar Sonker. Open the repository to inspect its source and documentation.";
+  const detail=projectDetails[r.name]||{};
+  const desc=detail.summary||r.description||"Open the project details to read its README, setup instructions, technologies, and limitations.";
+  const title=detail.title||r.name.replace(/[-_]/g," ");
   const language=r.language||"Repository";
   const stars=Number(r.stargazers_count||0);
-  return '<a class="project-card" href="'+esc(r.html_url)+'" target="_blank" rel="noopener noreferrer" aria-label="Open '+esc(r.name)+' on GitHub"><div class="project-symbol">'+esc(iconFor(r))+'</div><h3>'+esc(r.name.replace(/-/g," "))+'</h3><p>'+esc(desc)+'</p><div class="project-meta"><span class="lang">'+esc(language)+'</span><span>★ '+stars+' &nbsp; ↗</span></div></a>';
+  const topics=(detail.topics||r.topics||[]).slice(0,3);
+  return '<article class="project-card" tabindex="0" role="button" data-repo="'+esc(r.name)+'" aria-label="Read README for '+esc(title)+'"><div class="project-card-top"><div class="project-symbol">'+esc(iconFor(r))+'</div><span class="project-meta">'+esc(language)+'</span></div><h3>'+esc(title)+'</h3><p>'+esc(desc)+'</p><div class="project-tags">'+topics.map(t=>'<span>'+esc(t)+'</span>').join("")+'</div><div class="project-meta project-card-foot"><span>★ '+stars+'</span><span class="read-label">Read project README ↗</span></div></article>';
  }).join("");
+ grid.querySelectorAll("[data-repo]").forEach(card=>{
+  const open=()=>openReadme(repositories.find(r=>r.name===card.dataset.repo));
+  card.addEventListener("click",open);
+  card.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();open();}});
+ });
+}
+async function openReadme(repo){
+ if(!repo)return;
+ const detail=projectDetails[repo.name]||{};
+ const title=detail.title||repo.name.replace(/[-_]/g," ");
+ const url=detail.readme||("https://raw.githubusercontent.com/"+USER+"/"+encodeURIComponent(repo.name)+"/"+encodeURIComponent(repo.default_branch||"main")+"/README.md");
+ const panel=document.getElementById("readmePanel");
+ const body=document.getElementById("readmeBody");
+ const titleNode=document.getElementById("readmeTitle");
+ const sub=document.getElementById("readmeSubtitle");
+ panel.hidden=false;
+ titleNode.textContent=title;
+ sub.textContent="Loading repository README…";
+ body.innerHTML='<div class="readme-loading"><span class="mini-dot"></span> Fetching README from GitHub…</div>';
+ document.getElementById("openRepoLink").href=repo.html_url;
+ document.getElementById("copyRepoLink").onclick=()=>{const textValue=repo.html_url;navigator.clipboard?.writeText(textValue).then(()=>{document.getElementById("copyRepoLink").textContent="Copied";setTimeout(()=>document.getElementById("copyRepoLink").textContent="Copy repo link",1600);}).catch(()=>{});};
+ panel.scrollIntoView({behavior:"smooth",block:"start"});
+ try{
+  const response=await fetch(url,{headers:{"Accept":"text/plain"}});
+  if(!response.ok)throw new Error(response.status===404?"This repository doesn't have a README at the expected path.":"GitHub returned HTTP "+response.status+".");
+  const markdown=await response.text();
+  body.innerHTML=renderMarkdownSafe(markdown);
+  sub.textContent=(detail.warning?"Review the project's safety notes. · ":"")+"README from "+repo.full_name+" · main documentation";
+ }catch(error){
+  body.innerHTML='<div class="empty">Could not load the README inside this page: '+esc(error.message)+'. <a href="'+esc(repo.html_url)+'" target="_blank" rel="noopener noreferrer">Open repository on GitHub ↗</a></div>';
+  sub.textContent="README preview unavailable";
+ }
+}
+function renderMarkdownSafe(markdown){
+ const lines=markdown.replace(/\r/g,"").split("\n");
+ let out="",inCode=false,code=[],inList=false;
+ const inline=s=>esc(s).replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1 ↗</a>').replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>").replace(/\*([^*]+)\*/g,"<em>$1</em>").replace(/`([^`]+)`/g,"<code>$1</code>");
+ const closeList=()=>{if(inList){out+="</ul>";inList=false;}};
+ for(const line of lines){
+  if(line.trim().startsWith("```")){closeList();if(inCode){out+='<pre><code>'+esc(code.join("\n"))+'</code></pre>';code=[];inCode=false;}else inCode=true;continue;}
+  if(inCode){code.push(line);continue;}
+  if(!line.trim()){closeList();continue;}
+  if(/^###\s/.test(line)){closeList();out+="<h4>"+inline(line.replace(/^###\s/,""))+"</h4>";continue;}
+  if(/^##\s/.test(line)){closeList();out+="<h3>"+inline(line.replace(/^##\s/,""))+"</h3>";continue;}
+  if(/^#\s/.test(line)){closeList();out+="<h2>"+inline(line.replace(/^#\s/,""))+"</h2>";continue;}
+  if(/^>\s?/.test(line)){closeList();out+='<blockquote>'+inline(line.replace(/^>\s?/,""))+'</blockquote>';continue;}
+  if(/^[-*]\s/.test(line)){if(!inList){out+="<ul>";inList=true;}out+="<li>"+inline(line.replace(/^[-*]\s/,""))+"</li>";continue;}
+  closeList();out+="<p>"+inline(line)+"</p>";
+ }
+ closeList();if(inCode)out+='<pre><code>'+esc(code.join("\n"))+'</code></pre>';
+ return out;
 }
 async function loadRepos(){
  refresh.disabled=true;refresh.textContent="Loading…";
@@ -298,6 +410,8 @@ async function loadRepos(){
   const retry=document.getElementById("retryRepos");if(retry)retry.addEventListener("click",loadRepos);
  }finally{refresh.disabled=false;refresh.textContent="↻ Refresh";}
 }
+
+document.getElementById("closeReadme").addEventListener("click",()=>{document.getElementById("readmePanel").hidden=true;document.getElementById("projects").scrollIntoView({behavior:"smooth",block:"start"});});
 search.addEventListener("input",render);
 refresh.addEventListener("click",loadRepos);
 loadRepos();
