@@ -391,7 +391,7 @@ async function loadRepos(){
    if(!response.ok)throw new Error(response.status===403||response.status===429?"GitHub API rate limit reached. Try again in a few minutes.":"GitHub API returned HTTP "+response.status+".");
    const batch=await response.json();
    if(!Array.isArray(batch))throw new Error("Unexpected response from GitHub.");
-   all=all.concat(batch.filter(r=>!r.private&&!r.fork&&!r.archived));
+   all=all.concat(batch.filter(r=>!r.private&&!r.fork&&!r.archived&&r.name.toLowerCase()!==USER.toLowerCase()));
    if(batch.length<100)break;
    page++;
   }
