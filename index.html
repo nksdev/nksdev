@@ -90,6 +90,47 @@ body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),rad
 @media(max-width:720px){.hero-image-section{width:calc(100% - 22px);padding-top:12px}.hero-image-frame{border-radius:13px}.hero-banner-image{aspect-ratio:3/2;object-fit:cover}.hero-image-cta{right:10px;bottom:10px;padding:9px 12px;font-size:10px}.hero-image-caption{font-size:8px;letter-spacing:.06em;flex-direction:column;gap:5px}}
 @media(prefers-reduced-motion:reduce){.hero-banner-image,.hero-image-cta{transition:none}}
 
+
+/* Integrated split-hero: artwork blends into the site rather than sitting in a framed image box */
+.hero-blended{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(360px,.88fr) minmax(0,1.12fr);align-items:stretch;min-height:525px;padding-top:25px;padding-bottom:22px;overflow:hidden}
+.hero-blended-copy{position:relative;z-index:3;align-self:center;padding:25px 0 32px 18px;max-width:590px}
+.hero-blended .eyebrow{display:flex;align-items:center;gap:10px;color:var(--cyan);font:700 10px var(--mono);letter-spacing:.16em}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 14px var(--lime);flex:none}
+.hero-greeting{margin:28px 0 0;font-size:clamp(29px,3vw,43px);letter-spacing:-.06em;color:#e7e9f7}
+.hero-name{font-size:clamp(66px,7.2vw,104px);line-height:.93;letter-spacing:-.09em;font-weight:900;margin:5px 0 0;color:#f8f8ff}
+.hero-name .accent{color:var(--pink)}
+.hero-fullname{margin:6px 0 15px;font-size:clamp(22px,2.5vw,34px);letter-spacing:.015em;font-weight:800;color:#dfe4ff}
+.hero-role{font-size:clamp(17px,1.7vw,23px);line-height:1.5;margin:0 0 14px;font-weight:650}
+.hero-role em{font-style:normal;color:var(--cyan)}
+.hero-summary{max-width:480px;color:#b7bdd6;font-size:14px;line-height:1.8;margin:0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.hero-actions a{display:inline-flex;align-items:center;justify-content:center;gap:13px;padding:13px 18px;border-radius:12px;text-decoration:none;font-size:12px;font-weight:800;transition:transform .2s,box-shadow .2s}
+.hero-actions a:hover{transform:translateY(-2px)}
+.btn-primary{color:white;background:linear-gradient(105deg,#ff32b7,#8c38ff 65%,#1bc9f4);box-shadow:0 8px 28px #a42cff27}
+.btn-secondary{border:1px solid #454568;background:#11132699;color:#eef0ff}
+.hero-mantra{font:10px var(--mono);letter-spacing:.09em;color:#aeb3cf;margin-top:24px}
+.hero-mantra i{color:var(--pink);font-style:normal;padding:0 4px}
+.hero-blended-art{position:relative;z-index:1;min-height:470px;align-self:stretch;overflow:hidden;margin:-5px -25px -8px -85px;mask-image:linear-gradient(90deg,transparent 0%,#000 13%,#000 88%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 13%,#000 88%,transparent 100%)}
+.hero-blended-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% center;opacity:.96;filter:saturate(.96);transform:scale(1.025);animation:art-gentle-float 13s ease-in-out infinite alternate}
+.art-fade-left{position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 35%,transparent) 15%,transparent 42%);pointer-events:none}
+.art-fade-bottom{position:absolute;inset:45% 0 0;background:linear-gradient(0deg,var(--bg),transparent 72%);pointer-events:none}
+.art-note{position:absolute;z-index:2;font:italic 700 13px 'Permanent Marker',cursive;color:var(--pink);text-shadow:0 0 18px #ff45b844;letter-spacing:.02em}
+.art-note-top{top:8%;right:8%;transform:rotate(-7deg)}
+.art-note-bottom{bottom:12%;right:6%;color:var(--cyan);transform:rotate(4deg)}
+.principles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;padding-top:4px;padding-bottom:20px;position:relative;z-index:4}
+.principle{display:flex;align-items:center;gap:12px;min-width:0;padding:15px 13px;border:1px solid #393357;border-radius:14px;background:linear-gradient(120deg,#11152bd9,#080b19ed);text-decoration:none;color:#f4f4ff;box-shadow:inset 0 1px #ffffff08;transition:border-color .2s,transform .2s}
+.principle:hover{border-color:var(--cyan);transform:translateY(-3px)}
+.principle-icon{display:grid;place-items:center;flex:none;width:42px;height:42px;border:1px solid #ad42ff;border-radius:12px;color:var(--pink);font-size:21px;background:linear-gradient(145deg,#a52fff22,#20d9ff0d);box-shadow:0 0 20px #a42cff12}
+.principle:nth-child(2) .principle-icon{border-color:#24d6f5;color:var(--cyan)}
+.principle>span:nth-child(2){display:flex;flex-direction:column;gap:5px;min-width:0}
+.principle strong{font-size:13px;color:var(--cyan)}
+.principle small{font-size:10px;line-height:1.4;color:#c0c4dc}
+.principle>b{margin-left:auto;color:#9b8cff;font-size:17px}
+@keyframes art-gentle-float{from{transform:scale(1.025) translateY(0)}to{transform:scale(1.06) translateY(-5px)}}
+@media(max-width:980px){.hero-blended{grid-template-columns:minmax(320px,.9fr) minmax(0,1fr);min-height:470px}.hero-blended-copy{padding-left:4px}.hero-blended-art{margin-left:-75px;min-height:420px}.principles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.hero-blended{display:flex;flex-direction:column;padding-top:18px;min-height:0}.hero-blended-copy{padding:15px 4px 0;max-width:none}.hero-greeting{margin-top:18px}.hero-name{font-size:clamp(64px,18vw,92px)}.hero-fullname{font-size:25px}.hero-summary{font-size:13px}.hero-blended-art{width:calc(100% + 28px);margin:0 -14px -8px;min-height:280px;height:62vw;max-height:390px;mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 86%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 12%,#000 86%,transparent 100%)}.hero-blended-art img{object-position:74% center}.art-note{font-size:10px}.hero-mantra{font-size:8px}.principles{gap:8px}.principle{padding:11px 9px;gap:8px}.principle-icon{width:34px;height:34px;font-size:17px}.principle small{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.hero-blended-art img{animation:none;transition:none}}
+
 </style>
 </head>
 <body>
@@ -104,13 +145,29 @@ body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),rad
   </nav>
 </header>
 <main>
-<section class="hero-image-section wrap" id="home" aria-label="Naman Kumar Sonker portfolio hero">
-  <div class="hero-image-frame">
-    <img class="hero-banner-image" src="hero-anime.png" alt="Anime-inspired portrait of Naman Kumar Sonker in a neon-lit cybersecurity workspace, with cybersecurity themes, code monitors, books, laptop, and cat" fetchpriority="high">
-    <div class="hero-image-overlay" aria-hidden="true"></div>
-    <a class="hero-image-cta" href="#projects">Explore My Work <span>↘</span></a>
+<section class="hero-blended wrap" id="home" aria-label="Naman Kumar Sonker portfolio introduction">
+  <div class="hero-blended-copy">
+    <div class="eyebrow"><span class="status-dot"></span> CYBERSECURITY · SYSTEMS · SOFTWARE</div>
+    <p class="hero-greeting">Hey, I'm</p>
+    <h1 class="hero-name">NAMAN<span class="accent">.</span></h1>
+    <h2 class="hero-fullname">KUMAR SONKER</h2>
+    <p class="hero-role">Cybersecurity Student<br><em>Systems Thinker &amp; Builder</em></p>
+    <p class="hero-summary">I explore how systems work, where they break, and how to make them safer. Interested in application security, digital forensics, privacy-first AI, and practical automation.</p>
+    <div class="hero-actions"><a class="btn-primary" href="#projects">Explore My Work <span>↗</span></a><a class="btn-secondary" href="https://github.com/nksdev" target="_blank" rel="noopener">GitHub Profile</a></div>
+    <div class="hero-mantra">INSPECT <i>•</i> ANALYZE <i>•</i> BUILD <i>•</i> LEARN <i>•</i> REPEAT</div>
   </div>
-  <p class="hero-image-caption"><span>CYBERSECURITY · SYSTEMS · SOFTWARE</span><span>INSPECT · ANALYZE · BUILD · LEARN · REPEAT</span></p>
+  <div class="hero-blended-art" role="img" aria-label="Illustrated neon cybersecurity workstation featuring Naman, coding monitors, books, laptop and a cat">
+    <img src="hero-anime.png" alt="" fetchpriority="high">
+    <div class="art-fade-left"></div><div class="art-fade-bottom"></div>
+    <span class="art-note art-note-top">IDEAS INTO IMPACT ↘</span>
+    <span class="art-note art-note-bottom">GOOD CODE. SAFER SYSTEMS.</span>
+  </div>
+</section>
+<section class="principles wrap" aria-label="Working principles">
+ <a class="principle" href="#projects"><span class="principle-icon">♢</span><span><strong>Secure</strong><small>Think in threat models</small></span><b>↗</b></a>
+ <a class="principle" href="#projects"><span class="principle-icon">⌕</span><span><strong>Analyze</strong><small>Trace the full flow</small></span><b>↗</b></a>
+ <a class="principle" href="#projects"><span class="principle-icon">&lt;/&gt;</span><span><strong>Build</strong><small>Turn ideas into working tools</small></span><b>↗</b></a>
+ <a class="principle" href="#skills"><span class="principle-icon">▤</span><span><strong>Learn</strong><small>Keep improving every day</small></span><b>↗</b></a>
 </section>
 
 <section class="section wrap" id="about">
