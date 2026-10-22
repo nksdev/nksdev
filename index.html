@@ -167,6 +167,135 @@ body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),rad
 .readme-loading{padding:30px;color:var(--muted)}
 @media(max-width:650px){.project-card{min-height:unset;padding:16px}.readme-panel-head{flex-direction:column}.readme-panel{width:calc(100% - 24px);padding:16px}}
 
+
+/* Responsive refinements: desktop, laptop, tablet, and mobile */
+img{max-width:100%}
+.nav{position:relative;min-width:0}
+.menu-toggle{display:none;align-items:center;justify-content:center;gap:7px;min-height:40px;min-width:42px;padding:8px 11px;border-radius:11px;border:1px solid #343953;background:#101326;color:var(--text);font:700 11px var(--mono)}
+.menu-toggle .menu-icon{font-size:18px;line-height:1}
+.navlinks a{white-space:nowrap}
+.project-controls,.section-heading,.contact-card,.panel,.principle{min-width:0}
+.project-card,.panel,.readme-panel{overflow-wrap:anywhere}
+@media(min-width:1440px){
+  .wrap{width:min(1320px,calc(100% - 88px))}
+  .hero-blended{min-height:min(78vh,900px)}
+  .hero-name{font-size:clamp(88px,7vw,126px)}
+}
+@media(min-width:821px) and (max-width:1100px){
+  .wrap{width:calc(100% - 48px)}
+  .nav{gap:14px}
+  .navlinks{gap:10px;font-size:10px}
+  .navlinks a:nth-child(n+5){display:inline}
+  .connect{padding:10px 13px;white-space:nowrap}
+  .hero-blended{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+  .hero-blended-copy{min-width:0}
+  .hero-name{font-size:clamp(62px,7.4vw,88px)}
+  .hero-fullname{font-size:clamp(25px,3.5vw,39px)}
+  .hero-blended-art{min-width:0;margin-left:0}
+  .project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:820px){
+  html{scroll-padding-top:74px}
+  .nav{height:66px;gap:10px}
+  .menu-toggle{display:inline-flex;flex-shrink:0}
+  .navlinks,.navlinks.open{
+    position:absolute;top:calc(100% + 1px);left:0;right:0;z-index:30;
+    display:none;flex-direction:column;align-items:stretch;gap:0;
+    padding:9px;background:#0b0e1af7;border:1px solid #ffffff22;
+    border-radius:0 0 16px 16px;box-shadow:0 22px 42px #0009;
+    backdrop-filter:blur(16px);font-size:13px
+  }
+  .navlinks.open{display:flex}
+  .navlinks a,.navlinks a:nth-child(n+5){display:block;padding:11px 12px;border-radius:9px;white-space:normal}
+  .navlinks a:hover,.navlinks a:focus-visible{background:#ffffff0b}
+  .connect{white-space:nowrap;padding:10px 13px}
+  .hero-blended{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;min-height:0;padding-top:26px;padding-bottom:26px}
+  .hero-blended-copy{padding:16px 0;min-width:0}
+  .hero-name{font-size:clamp(58px,9vw,82px);overflow-wrap:normal}
+  .hero-fullname{font-size:clamp(24px,4vw,36px)}
+  .hero-blended-art{min-width:0;margin:0;min-height:0;align-self:center}
+  .hero-blended-art img{width:100%;height:auto;object-fit:contain}
+  .principles{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .grid-2,.education-grid{grid-template-columns:minmax(0,1fr);gap:13px}
+  .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .readme-panel{width:100%;margin:16px auto;padding:20px}
+  .readme-body{overflow-wrap:anywhere}
+  .readme-body pre{max-width:100%;overflow:auto}
+  .readme-body table{max-width:100%;overflow:auto}
+  .section{padding-top:22px;padding-bottom:22px}
+}
+@media(max-width:560px){
+  .wrap{width:calc(100% - 28px)}
+  .nav{height:60px}
+  .brand{font-size:19px}
+  .connect{font-size:10px;padding:9px 10px}
+  .menu-toggle{min-width:40px;padding:7px 9px}
+  .hero-blended{display:flex;flex-direction:column;align-items:stretch;padding-top:18px;gap:0}
+  .hero-blended-copy{padding:16px 0 8px}
+  .hero-greeting{margin-top:14px;font-size:clamp(25px,7vw,34px)}
+  .hero-name{font-size:clamp(61px,16vw,88px);line-height:.95;letter-spacing:-.075em}
+  .hero-fullname{font-size:clamp(28px,7.6vw,42px);line-height:1.08;overflow-wrap:anywhere}
+  .hero-role{font-size:18px}
+  .hero-summary{font-size:13px;line-height:1.75}
+  .hero-actions{gap:8px}
+  .hero-actions a{max-width:100%;justify-content:center}
+  .hero-mantra{font-size:9px;letter-spacing:.06em;line-height:1.9}
+  .hero-blended-art{width:100%;margin:0;max-height:none}
+  .hero-blended-art img{display:block;width:100%;height:auto;object-fit:contain}
+  .principles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .principle{padding:12px;gap:8px}
+  .principle small{font-size:10px}
+  .section{padding:18px 0}
+  .section-heading{gap:12px}
+  .section-title{font-size:19px;line-height:1.3}
+  .section-title .ico{width:34px;height:34px;flex:0 0 34px}
+  .panel{padding:16px;border-radius:15px}
+  .stat-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .stat{padding:11px 8px}
+  .stat strong{font-size:20px}
+  .skill-icons{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 7px}
+  .skill{min-width:0;overflow-wrap:anywhere}
+  .timeline-item{grid-template-columns:78px minmax(0,1fr);gap:9px}
+  .edu-item{grid-template-columns:72px minmax(0,1fr);gap:10px}
+  .project-controls{display:grid;grid-template-columns:minmax(0,1fr) auto;width:100%}
+  .live-badge{grid-column:1/-1;justify-self:start}
+  .search{width:100%;min-width:0}
+  .project-grid{grid-template-columns:1fr;gap:10px}
+  .project-card{min-height:0;padding:16px}
+  .project-card p{font-size:12px}
+  .project-card h3{font-size:14px}
+  .project-tags span{font-size:10px}
+  .readme-panel{width:100%;padding:15px;margin:14px 0}
+  .readme-panel-head{gap:10px}
+  .readme-body{font-size:13px}
+  .readme-body pre{font-size:10px;padding:11px}
+  .contact-card{padding:20px;gap:18px}
+  .contact-links{width:100%;gap:7px}
+  .contact-links a{font-size:10px;padding:10px 11px}
+  .footer{font-size:9px;overflow-wrap:anywhere}
+}
+@media(max-width:360px){
+  .wrap{width:calc(100% - 22px)}
+  .nav{gap:6px}
+  .brand{font-size:17px}
+  .connect{font-size:9px;padding:8px}
+  .hero-name{font-size:clamp(54px,15.5vw,66px)}
+  .hero-fullname{font-size:27px}
+  .hero-actions{align-items:stretch;flex-direction:column}
+  .hero-actions a{width:100%}
+  .principle{padding:10px}
+  .principle-icon{flex:0 0 24px}
+  .stat strong{font-size:17px}
+  .section-kicker{font-size:9px;letter-spacing:.03em}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+/* Discourage casual copying; this is not access control. */
+body{-webkit-user-select:none;user-select:none}
+input,textarea,select,[contenteditable="true"]{-webkit-user-select:text!important;user-select:text!important}
+
 </style>
 </head>
 <body>
@@ -174,7 +303,8 @@ body{background:radial-gradient(ellipse at 80% 8%,#3a12502b,transparent 35%),rad
 <header class="topbar">
   <nav class="nav wrap" aria-label="Main navigation">
     <a class="brand" href="#home">NAMAN<span>•</span></a>
-    <div class="navlinks">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-controls="siteNavLinks" aria-expanded="false" aria-label="Open navigation menu"><span class="menu-icon" aria-hidden="true">☰</span><span>Menu</span></button>
+    <div class="navlinks" id="siteNavLinks">
       <a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#achievements">Highlights</a><a href="#resume">Resume</a>
     </div>
     <a class="connect" href="#contact">Let's Connect ↗</a>
@@ -305,6 +435,8 @@ const status=document.getElementById("repoStatus");
 const search=document.getElementById("projectSearch");
 const refresh=document.getElementById("refreshRepos");
 let repositories=[];
+let lastRepoSync=0;
+let isLoadingRepos=false;
 document.getElementById("year").textContent=new Date().getFullYear();
 const skillTabs=document.querySelectorAll("[data-skill-filter]");
 const skillItems=document.querySelectorAll("#skillIcons .skill");
@@ -400,12 +532,14 @@ function renderMarkdownSafe(markdown){
  return out;
 }
 async function loadRepos(){
+ if(isLoadingRepos)return;
+ isLoadingRepos=true;
  refresh.disabled=true;refresh.textContent="Loading…";
  status.innerHTML='<span class="mini-dot"></span> Fetching public repositories from GitHub…';
  try{
   let all=[],page=1;
   while(page<=10){
-   const response=await fetch("https://api.github.com/users/"+USER+"/repos?type=owner&sort=updated&per_page=100&page="+page,{headers:{"Accept":"application/vnd.github+json"}});
+   const response=await fetch("https://api.github.com/users/"+USER+"/repos?type=owner&sort=updated&per_page=100&page="+page,{headers:{"Accept":"application/vnd.github+json"},cache:"no-store"});
    if(!response.ok)throw new Error(response.status===403||response.status===429?"GitHub API rate limit reached. Try again in a few minutes.":"GitHub API returned HTTP "+response.status+".");
    const batch=await response.json();
    if(!Array.isArray(batch))throw new Error("Unexpected response from GitHub.");
@@ -420,20 +554,58 @@ async function loadRepos(){
    return ai-bi||new Date(b.pushed_at||b.updated_at)-new Date(a.pushed_at||a.updated_at);
   });
   render();
+  lastRepoSync=Date.now();
   const time=new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
-  status.innerHTML='<span class="mini-dot"></span> '+repositories.length+' public, non-fork repositories · synced '+esc(time)+' · refreshes from GitHub on page load';
+  status.innerHTML='<span class="mini-dot"></span> '+repositories.length+' public, non-fork repositories · synced '+esc(time)+' · auto-refreshes every 5 min while open';
  }catch(error){
   if(!repositories.length)grid.innerHTML='<div class="empty">Could not load repositories. <button id="retryRepos" class="pill" type="button">Try again</button><br><br>'+esc(error.message)+'</div>';
   status.innerHTML='<span class="mini-dot" style="background:var(--pink)"></span> Live feed unavailable: '+esc(error.message);
   const retry=document.getElementById("retryRepos");if(retry)retry.addEventListener("click",loadRepos);
- }finally{refresh.disabled=false;refresh.textContent="↻ Refresh";}
+ }finally{refresh.disabled=false;refresh.textContent="↻ Refresh";isLoadingRepos=false;}
 }
 
 document.getElementById("closeReadme").addEventListener("click",()=>{document.getElementById("readmePanel").hidden=true;document.getElementById("projects").scrollIntoView({behavior:"smooth",block:"start"});});
 search.addEventListener("input",render);
 refresh.addEventListener("click",loadRepos);
 loadRepos();
+setInterval(()=>{if(document.visibilityState==="visible")loadRepos();},300000);
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&Date.now()-lastRepoSync>=300000)loadRepos();});
+window.addEventListener("focus",()=>{if(Date.now()-lastRepoSync>=300000)loadRepos();});
 })();
 </script>
+
+<script id="responsive-and-copy-controls">
+(function(){
+"use strict";
+const toggle=document.getElementById("menuToggle");
+const nav=document.getElementById("siteNavLinks");
+if(toggle&&nav){
+ const closeMenu=()=>{nav.classList.remove("open");toggle.setAttribute("aria-expanded","false");toggle.setAttribute("aria-label","Open navigation menu");const icon=toggle.querySelector(".menu-icon");if(icon)icon.textContent="☰";};
+ toggle.addEventListener("click",()=>{
+  const open=!nav.classList.contains("open");
+  nav.classList.toggle("open",open);
+  toggle.setAttribute("aria-expanded",String(open));
+  toggle.setAttribute("aria-label",open?"Close navigation menu":"Open navigation menu");
+  const icon=toggle.querySelector(".menu-icon");if(icon)icon.textContent=open?"✕":"☰";
+ });
+ nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeMenu));
+ document.addEventListener("keydown",event=>{if(event.key==="Escape")closeMenu();});
+ document.addEventListener("click",event=>{if(!nav.contains(event.target)&&!toggle.contains(event.target))closeMenu();});
+ window.addEventListener("resize",()=>{if(window.innerWidth>820)closeMenu();});
+}
+const editable=target=>!!(target&&target.closest("input,textarea,select,[contenteditable='true']"));
+document.addEventListener("contextmenu",event=>{if(!editable(event.target))event.preventDefault();});
+document.addEventListener("copy",event=>{if(!editable(event.target))event.preventDefault();});
+document.addEventListener("cut",event=>{if(!editable(event.target))event.preventDefault();});
+document.addEventListener("selectstart",event=>{if(!editable(event.target))event.preventDefault();});
+document.addEventListener("keydown",event=>{
+ if(editable(event.target))return;
+ const key=(event.key||"").toLowerCase();
+ if((event.ctrlKey||event.metaKey)&&["c","x"].includes(key))event.preventDefault();
+ if((event.ctrlKey||event.metaKey)&&event.key==="Insert")event.preventDefault();
+});
+})();
+</script>
+
 </body>
 </html>
